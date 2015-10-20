@@ -10,3 +10,10 @@ bower install
 
 ng-cordova插件：
 cordova plugin add https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git
+
+
+
+
+
+其他
+bower install pixi
