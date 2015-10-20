@@ -1,8 +1,11 @@
 购物商城项目
 
 环境：
+自己安装Ionic和android环境
+ionic platform add android
 npm install
 bower install
+
 
 
 ng-cordova插件：
