@@ -6,8 +6,6 @@
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -16,12 +14,12 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-
-
-    <!--yourself-->
-    <!-- your app's css -->
+    <!-- yourself CSS -->
+    <link href="css/common.css" rel="stylesheet">
     <link href="css/guidePage/guidePage.css" rel="stylesheet">
+    <link href="css/login/login.css" rel="stylesheet">
 
+    <!--yourself JS-->
     <!-- your app's start js -->
     <script src="js/app.js"></script>
     <script src="js/config.js"></script>
@@ -35,6 +33,7 @@
     <script src="areas/h5pixi/firstCanvas_route.js"></script>
     <script src="areas/guidePage/guidePage_route.js"></script>
     <script src="areas/login/login_route.js"></script>
+    <script src="areas/home/home_route.js"></script>
 
     <!-- your app's function js -->
     <script src="areas/h5pixi/firstCanvas_controller.js"></script>
@@ -42,11 +41,14 @@
     <script src="areas/guidePage/guidePage_controller.js"></script>
     <script src="areas/login/login_controller.js"></script>
     <script src="areas/login/login_service.js"></script>
+    <script src="areas/home/home_controller.js"></script>
+    <script src="areas/home/home_service.js"></script>
 
     <!-- your app's plugins js -->
     <script src="lib/ng-cordova/dist/ng-cordova.min.js"></script>
     <script src="lib/pixi/bin/pixi.min.js"></script>
     <script src="lib/konva/konva.min.js"></script>
+    <script src="lib/canvas_framework/js/sunwukong.js"></script>
 
 
   </head>

@@ -1,0 +1,8 @@
+#login .loginError{
+  color: red;
+}
+
+#login ion-header-bar{
+  font-size: large;
+  background-color: transparent;
+}

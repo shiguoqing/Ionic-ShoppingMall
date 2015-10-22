@@ -4,18 +4,29 @@
  功  能：用户登陆
  ******************************************************/
 angular.module('APT.login.controller', [])
-  .controller('LoginCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {
+  .controller('LoginCtrl', ['$scope', '$ionicHistory','$state', function ($scope, $ionicHistory,$state) {
 
     $scope.$on('$ionicView.enter', function (e) {
-      init();
+
     });
 
-    function init(){
-
-    }
-
-    // 返回按钮方法
-    $scope.goBack = function () {
-      $ionicHistory.goBack();
+    // 变量定义
+    $scope.loginInfo = {
+      userName: "",
+      password: "",
+      loginError: "",
+      hasError: false
     };
+
+    // 登录方法
+    $scope.login = function () {
+      if($scope.loginInfo.userName=="admin"&&$scope.loginInfo.password=="1"){
+        $state.go("home");
+      }
+      else{
+        $scope.loginInfo.hasError=true;
+        $scope.loginInfo.loginError="用户名或密码不正确，请重新输入！";
+      }
+    };
+
   }]);

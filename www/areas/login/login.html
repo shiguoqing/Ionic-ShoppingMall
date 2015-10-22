@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<ion-view id="login" view-title="用户登陆" hide-back-button="true" cache-view="false">
+  <ion-header-bar>
+    <h1 class="title"><strong>用户登陆</strong></h1>
+  </ion-header-bar>
+  <ion-content class="scroll-content  has-header padding-top" scroll="false">
+    <div class='list'>
+      <label class='item item-input'>
+        <input type='text' ng-model='loginInfo.userName' placeholder='User Name'>
+      </label>
+      <label class='item item-input'>
+        <input type='password' ng-model='loginInfo.password' placeholder='Password'>
+      </label>
+    </div>
+    <div class="loginError padding-left" ng-show='loginInfo.hasError'>
+      {{loginInfo.loginError}}
+    </div>
+    <div class="padding-top">
+      <button class="button button-block button-positive" ng-click='login()'>登录</button>
+    </div>
+  </ion-content>
+</ion-view>

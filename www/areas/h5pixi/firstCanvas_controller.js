@@ -8,8 +8,16 @@ angular.module('APT.firstCanvas.controller', ['APT.firstCanvas.service'])
   .controller('FirstCanvasCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {
 
     $scope.$on('$ionicView.enter', function (e) {
-      init();
+      //init();
+      sunwukong();
+
     });
+
+
+    function sunwukong(){
+
+
+    }
 
     function init(){
       clock();
