@@ -1,10 +1,10 @@
 /******************************************************
  创建人：石国庆       创建时间：2015.08.25
  修改人：             修改时间：
- 功  能：审批服务
+ 功  能：H5画布
  ******************************************************/
-angular.module('APT.firstCanvas.service', [])
-  .factory('FirstCanvasFty', ['$http', '$q','Global','$window', function ($http, $q,Global,$window) {
+angular.module('APT.canvas.service', [])
+  .factory('CanvasFty', ['$http', '$q','Global','$window', function ($http, $q,Global,$window) {
     return {
       // 获取待办任务列表数据
       mobileUserUndoTaskList: function (message) {

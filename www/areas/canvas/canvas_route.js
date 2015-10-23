@@ -1,4 +1,4 @@
-angular.module('APT.firstCanvas.route', ['APT.firstCanvas.controller'])
+angular.module('APT.canvas.route', ['APT.canvas.controller'])
   .config(function ($stateProvider, $urlRouterProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
@@ -7,10 +7,10 @@ angular.module('APT.firstCanvas.route', ['APT.firstCanvas.controller'])
     // Each state's controller can be found in controllers.js
     $stateProvider
       // 审批功能首页面
-      .state('firstCanvas', {
-        url: '/firstCanvas',
-        templateUrl: 'areas/h5pixi/h5pixi.html',
-        controller: 'FirstCanvasCtrl'
+      .state('canvas', {
+        url: '/canvas',
+        templateUrl: 'areas/canvas/canvas.html',
+        controller: 'CanvasCtrl'
       })
 
   });

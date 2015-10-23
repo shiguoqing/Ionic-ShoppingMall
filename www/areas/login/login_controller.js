@@ -21,7 +21,7 @@ angular.module('APT.login.controller', [])
     // 登录方法
     $scope.login = function () {
       if($scope.loginInfo.userName=="admin"&&$scope.loginInfo.password=="1"){
-        $state.go("home");
+        $state.go("indexTab.home");
       }
       else{
         $scope.loginInfo.hasError=true;

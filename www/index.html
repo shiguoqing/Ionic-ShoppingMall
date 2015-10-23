@@ -30,22 +30,33 @@
     <script src="areas/common/common.js"></script>
 
     <!-- your app's route js -->
-    <script src="areas/h5pixi/firstCanvas_route.js"></script>
+    <script src="areas/canvas/canvas_route.js"></script>
     <script src="areas/guidePage/guidePage_route.js"></script>
     <script src="areas/login/login_route.js"></script>
+    <script src="areas/tabs/indexTab_route.js"></script>
     <script src="areas/home/home_route.js"></script>
+    <script src="areas/category/category_route.js"></script>
+    <script src="areas/cart/cart_route.js"></script>
+    <script src="areas/account/account_route.js"></script>
 
     <!-- your app's function js -->
-    <script src="areas/h5pixi/firstCanvas_controller.js"></script>
-    <script src="areas/h5pixi/firstCanvas_service.js"></script>
+    <script src="areas/canvas/canvas_controller.js"></script>
+    <script src="areas/canvas/canvas_service.js"></script>
     <script src="areas/guidePage/guidePage_controller.js"></script>
     <script src="areas/login/login_controller.js"></script>
     <script src="areas/login/login_service.js"></script>
     <script src="areas/home/home_controller.js"></script>
     <script src="areas/home/home_service.js"></script>
+    <script src="areas/category/category_controller.js"></script>
+    <script src="areas/category/category_service.js"></script>
+    <script src="areas/cart/cart_controller.js"></script>
+    <script src="areas/cart/cart_service.js"></script>
+    <script src="areas/account/account_controller.js"></script>
+    <script src="areas/account/account_service.js"></script>
 
     <!-- your app's plugins js -->
     <script src="lib/ng-cordova/dist/ng-cordova.min.js"></script>
+
     <script src="lib/pixi/bin/pixi.min.js"></script>
     <script src="lib/konva/konva.min.js"></script>
     <script src="lib/canvas_framework/js/sunwukong.js"></script>
@@ -53,18 +64,6 @@
 
   </head>
   <body ng-app="starter">
-    <!--
-      The nav bar that will be updated as we navigate between views.
-    -->
-    <!--<ion-nav-bar class="bar-stable">-->
-      <!--<ion-nav-back-button>-->
-      <!--</ion-nav-back-button>-->
-    <!--</ion-nav-bar>-->
-    <!--
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
     <ion-nav-view></ion-nav-view>
   </body>
 </html>

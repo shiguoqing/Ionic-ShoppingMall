@@ -1,14 +1,14 @@
 /******************************************************
  创建人：石国庆          创建时间：2015.08.25
  创建人：                修改时间：
- 功  能：H5页面
+ 功  能：H5画布
  ******************************************************/
-angular.module('APT.firstCanvas.controller', ['APT.firstCanvas.service'])
+angular.module('APT.canvas.controller', ['APT.canvas.service'])
   // 审批功能虚拟路由控制器
-  .controller('FirstCanvasCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {
+  .controller('CanvasCtrl', ['$scope', '$ionicHistory', function ($scope, $ionicHistory) {
 
     $scope.$on('$ionicView.enter', function (e) {
-      //init();
+      init();
       sunwukong();
 
     });
