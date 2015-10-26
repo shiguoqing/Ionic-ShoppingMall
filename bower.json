@@ -5,6 +5,7 @@
     "ionic": "driftyco/ionic-bower#1.1.0"
   },
   "dependencies": {
-    "ng-cordova": "~0.0.3"
+    "ng-cordova": "~0.0.3",
+    "mui": "~0.2.1"
   }
 }

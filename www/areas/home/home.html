@@ -1,8 +1,43 @@
-<ion-view id="guidePage" view-title="首页" hide-back-button="true" cache-view="false">
-  <ion-content class="scroll-content  has-header" scroll="false">
-    <div>搜索</div>
-    <div>滚动</div>
-    <div>分类</div>
+<ion-view id="home" view-title="首页" hide-back-button="true" cache-view="false">
+  <ion-content class="scroll-content" scroll="true">
+    <div class="bar bar-header item-input-inset">
+      <i class="button button-stable ion-android-expand"></i>
+      <label class="item-input-wrapper">
+        <i class="ion-ios-search-strong"></i>
+        <input type="text" placeholder="请输入搜索信息" ng-focus="alert('dfd');">
+      </label>
+      <i class="button button-stable ion-chatbox-working"></i>
+    </div>
+    <div>
+      <ion-slide-box show-pager="true" auto-play="true" does-continue="true">
+        <ion-slide>
+          <img src="img/home/home-slide-1.jpg">
+        </ion-slide>
+        <ion-slide>
+          <img src="img/home/home-slide-2.jpg">
+        </ion-slide>
+        <ion-slide>
+          <img src="img/home/home-slide-3.jpg">
+        </ion-slide>
+        <ion-slide>
+          <img src="img/home/home-slide-4.jpg">
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+    <div>
+      <div class="row">
+        <div class="col"><img src="img/home/home-func-1.jpg"></div>
+        <div class="col"><img src="img/home/home-func-2.jpg"></div>
+        <div class="col"><img src="img/home/home-func-3.jpg"></div>
+        <div class="col"><img src="img/home/home-func-4.jpg"></div>
+      </div>
+      <div class="row">
+        <div class="col"><img src="img/home/home-func-5.jpg"></div>
+        <div class="col"><img src="img/home/home-func-6.jpg"></div>
+        <div class="col"><img src="img/home/home-func-7.jpg"></div>
+        <div class="col"><img src="img/home/home-func-8.jpg"></div>
+      </div>
+    </div>
     <div>商品</div>
   </ion-content>
 </ion-view>

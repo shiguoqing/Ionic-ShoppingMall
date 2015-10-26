@@ -1,0 +1,31 @@
+/*heaeder-bar*/
+#home label{
+  background-color: white;
+}
+
+#home .bar-header{
+  background-color:orangered;
+}
+
+#home i{
+  background-color: transparent;
+}
+
+/*滚动条*/
+#home ion-slide{
+  text-align:center;
+}
+#home ion-slide img{
+  height:20%;
+  width: 100%;
+}
+
+/*功能栅栏*/
+#home .row{
+  background-color: white;
+  text-align: center;
+}
+
+#home .col{
+  border: 1px solid #eeeeee;
+}

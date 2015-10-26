@@ -7,6 +7,7 @@ angular.module('APT.home.controller', [])
   .controller('HomeCtrl', ['$scope', '$state', function ($scope, $state) {
 
     $scope.$on('$ionicView.enter', function (e) {
+
     });
 
     // 返回按钮方法
