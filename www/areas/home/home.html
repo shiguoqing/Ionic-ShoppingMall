@@ -1,30 +1,32 @@
 <ion-view id="home" view-title="首页" hide-back-button="true" cache-view="false">
   <ion-content class="scroll-content" scroll="true">
-    <div class="bar bar-header item-input-inset">
-      <i class="button button-stable ion-android-expand"></i>
-      <label class="item-input-wrapper">
-        <i class="ion-ios-search-strong"></i>
-        <input type="text" placeholder="请输入搜索信息" ng-focus="alert('dfd');">
-      </label>
-      <i class="button button-stable ion-chatbox-working"></i>
+    <!--头部搜索栏-->
+    <div class="headerBar">
+      <div class="headerBar-logo">
+        <i></i>
+      </div>
+      <div class="headerBar-search">
+        搜索
+        <!--<input class="search" type="text" placeholder="请输入搜索信息">-->
+      </div>
+      <div class="headerBar-login">
+        <span>
+            登录
+        </span>
+      </div>
     </div>
-    <div>
-      <ion-slide-box show-pager="true" auto-play="true" does-continue="true">
-        <ion-slide>
-          <img src="img/home/home-slide-1.jpg">
-        </ion-slide>
-        <ion-slide>
-          <img src="img/home/home-slide-2.jpg">
-        </ion-slide>
-        <ion-slide>
-          <img src="img/home/home-slide-3.jpg">
-        </ion-slide>
-        <ion-slide>
-          <img src="img/home/home-slide-4.jpg">
-        </ion-slide>
-      </ion-slide-box>
+    <!--头部滚动条-->
+    <div class="headerSlider">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" ng-repeat="item in headerSlideData">
+            <img alt="{{item.alt}}" src="{{item.src}}">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
-    <div>
+    <div class="function">
       <div class="row">
         <div class="col"><img src="img/home/home-func-1.jpg"></div>
         <div class="col"><img src="img/home/home-func-2.jpg"></div>
@@ -38,6 +40,80 @@
         <div class="col"><img src="img/home/home-func-8.jpg"></div>
       </div>
     </div>
-    <div>商品</div>
+    <div class="toutiao">
+      <img src="img/home/home-toutiao.jpg">
+      <!--<ul>-->
+        <!--<li>1</li>-->
+        <!--<li>2</li>-->
+        <!--<li>3</li>-->
+      <!--</ul>-->
+    </div>
+    <div class="ad padding-top">
+      <ion-slide-box show-pager="true" auto-play="true" does-continue="true">
+        <ion-slide>
+          <img src="img/home/home-ad-1.jpg">
+        </ion-slide>
+        <ion-slide>
+          <img src="img/home/home-ad-2.jpg">
+        </ion-slide>
+        <ion-slide>
+          <img src="img/home/home-ad-3.jpg">
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+
+    <div class="kill">
+      <div>
+        <span>掌上秒杀</span>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col"><img src="img/home/home-func-1.jpg"></div>
+          <div class="col"><img src="img/home/home-func-2.jpg"></div>
+          <div class="col"><img src="img/home/home-func-3.jpg"></div>
+          <div class="col"><img src="img/home/home-func-4.jpg"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="theme">
+      <div>
+        <span>主题街</span>
+      </div>
+      <div>
+        <div>
+          <div><img  style="float: left;width: 50%" src="img/home/home-theme-1.jpg"></div>
+          <div ><img style="float: right; width: 50%" src="img/home/home-theme-3.jpg"></div>
+          <div><img  style="float: left; width: 50%" src="img/home/home-theme-2.jpg"></div>
+          <!--<div class="col"><img src="img/home/home-func-4.jpg"></div>-->
+        </div>
+      </div>
+    </div>
+    <div class="ad padding-top" style="clear: both">
+      <ion-slide-box show-pager="true" auto-play="true" does-continue="true">
+        <ion-slide>
+          <img src="img/home/home-ad-4.jpg">
+        </ion-slide>
+        <ion-slide>
+          <img src="img/home/home-ad-5.jpg">
+        </ion-slide>
+        <ion-slide>
+          <img src="img/home/home-ad-6.jpg">
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+    <div class="guess">
+      <div>
+        <span>猜你喜欢</span>
+      </div>
+      <div class="row">
+        <div class="col"><img src="img/home/home-func-1.jpg"></div>
+        <div class="col"><img src="img/home/home-func-2.jpg"></div>
+      </div>
+      <div class="row">
+        <div class="col"><img src="img/home/home-func-5.jpg"></div>
+        <div class="col"><img src="img/home/home-func-6.jpg"></div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
