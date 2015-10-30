@@ -110,58 +110,139 @@
   width: 100%;
 }
 
-/*功能栅栏*/
-#home .function .row {
-  background-color: white;
-  text-align: center;
+/*功能导航*/
+#home #nav{
+  height:160px;
+  width:100%;
+  padding:0 3%;
+  background-color:#fff;
+  overflow:hidden;
+  box-shadow:0 1px 1px #ebebeb;
 }
-
-#home .function .col {
-  border: 1px solid #eeeeee;
+#home #nav span{
+  display:block;
+  float:left;
+  width:25%;
+  height:60px;
+  margin-top:16px;
+}
+#home #nav span img{
+  display:block;
+  width:40px;
+  height:40px;
+  margin:0px auto;
+}
+#home #nav span h2{
+  font-size:14px;
+  font-weight:300;
+  text-align:center;
+  margin-top: 10px;
 }
 
 /*京东头条*/
 #home .toutiao {
-  height: 35px;
+  padding-top: 10px;
+  display: inline-block;
+  height: 42px;
+  width: 100%;
   background-color: white;
   horiz-align: center;
 }
 
 #home .toutiao img {
-  width: 25%;
-  padding-left: 5px;
+  height: 28px;
+  width: 25%;;
+  margin-left: 5px;
+  display: inline-block;
+
+}
+
+#home .toutiao #toutiaoSlider {
+  display: inline-block;
+  height: 25px;
 }
 
 /*秒杀*/
-#home .kill {
-  background-color: white;
-  margin-top: 10px;
+#home #centent{
+  margin:10px 5px;
+  background-color:#fff;
+  box-shadow:0 1px 1px #dcdcdc;
+}
+#home .centent-top{
+  height:32px;
+  overflow:hidden;
+}
+#home .centent-top span{
+  display:block;
+  width:16px;
+  height:20px;
+  margin:4px 4px 0 4px;
+  background-image:url(../../img/home/seckill-icon.png);
+  background-size:16px 20px;
+  float:left;
+}
+#home .centent-top h2{
+  float:left;
+  font-size:15px;
+  color:#f00;
+  line-height:30px;
+  margin-right:10px;
+  margin-top: 0px;
+}
+#home .centent-time span{
+  background-image:none;
+  margin:5px 1px;
+  width:5px;
+  color:#5d5d5d;
+  font-size:14px;
+  font-weight:700;
+  text-align:center;
+}
+#home .centent-top .time-text{
+  color:#fff;
+  font-size:16px;
+  width:15px;
+  font-weight:300;
+  background-color:#5d5d5d;
+}
+#home .centent-more{
+  float:right;
+  line-height:30px;
+  margin-right:5px;
+  font-size:14px;
+}
+#home .centent-bottom{
+  padding-top:7px;
+  overflow:hidden;
+}
+#home .centent-bottom li{
+  width:33.3%;
+  float:left;
 }
 
-#home .kill span {
-  color: red;
-  padding-left: 5px;
+#home .centent-bottom li img{
+  display:block;
+  border-right:1px solid #e6e6e6;
+  margin: 0;
+  padding: 0;
+  height: 100px;
+  width: 100%;
 }
-
-/*主题街*/
-#home .theme {
-  margin-top: 10px;
-  background-color: white;
+#home .centent-bottom li span{
+  display:block;
+  text-align:center;
+  font-size:14px;
 }
-
-#home .theme span {
-  color: red;
-  padding-left: 5px;
+#home .seckill-now{
+  color:#f15353;
 }
-
-#home .theme span {
-  color: red;
-  padding-left: 5px;
+#home .seckill-old{
+  text-decoration:line-through;
 }
-
 /*广告*/
 #home .ad ion-slide {
   text-align: center;
+  margin-top: 5px;
 }
 
 #home .ad ion-slide img {
@@ -169,14 +250,42 @@
   width: 100%;
 }
 
-/*猜你喜欢*/
-#home .guess {
-  background-color: white;
-  margin-top: 10px;
+/*商品展示*/
+#home .floor{
+  margin:0 5px 5px;
+  background-color:#fff;
+  box-shadow:0 1px 1px #dcdcdc;
+  overflow:hidden;
 }
-
-#home .guess span {
-  color: red;
-  padding-left: 5px;
+#home .floor-title{
+  font-size:15px;
+  padding-top:8px;
+  padding-left:7px;
+  padding-bottom:5px;
+}
+#home .floor-title:before{
+  display:inline-block;
+  content:'';
+  width:3px;
+  height:12px;
+  background-color:#d8505c;
+  margin:1px 7px 0 0;
+}
+#home .floor-product{
+  width:100%;
+}
+#home .floor-product-list{
+  width:50%;
+  overflow:hidden;
+  float:left;
+}
+#home .floor-product-list img{
+  width:100%;
+  display:block;
+  border-top:1px solid #eee;
+}
+#home .floor-left{
+  border-right:1px solid #eee;
+  margin-left:-1px;
 }
 

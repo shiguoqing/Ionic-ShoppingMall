@@ -10,8 +10,12 @@ angular.module('APT.home.controller', [])
       getHeaderSlideData();
     });
 
-    initHeaderSlide();
     headerChangeColor();
+    initHeaderSlide();
+    initToutiaoSlide();
+    countdown();
+
+
 
     // 头部滚动条数据
     function getHeaderSlideData(){
@@ -40,9 +44,23 @@ angular.module('APT.home.controller', [])
 
     }
 
+
+    // 改变头部颜色
+    function headerChangeColor(){
+      var bg=window.document.getElementById('home-content');
+      var nowOpacity=0;
+      bg.onscroll=function(event){
+        if(this.scrollTop/250<.85){
+          nowOpacity=this.scrollTop/250;
+        }
+        document.getElementById("headerBar-bg").style.opacity=nowOpacity;
+      }
+    }
+
+
     // 初始化头部滚动条
     function initHeaderSlide(){
-      var mySwiper = new Swiper('#headerSlider', {
+      var headerSwiper = new Swiper('#headerSlider', {
         slidesPerView: 1,
         paginationClickable: true,
         centeredSlides: true,
@@ -57,17 +75,66 @@ angular.module('APT.home.controller', [])
       });
     }
 
-    // 改变头部颜色
-    function headerChangeColor(){
-      var bg=window.document.getElementById('home-content');
-      var nowOpacity=0;
-      bg.onscroll=function(event){
-        if(this.scrollTop/250<.85){
-          nowOpacity=this.scrollTop/250;
-        }
-        document.getElementById("headerBar-bg").style.opacity=nowOpacity;
-      }
+    // 初始化头部滚动条
+    function initToutiaoSlide(){
+      var toutiaoSwiper = new Swiper('#toutiaoSlider', {
+        direction:'vertical',
+        //slidesPerView: 1,
+        //paginationClickable: true,
+        //centeredSlides: true,
+        autoplay: 2000,
+        //autoplayDisableOnInteraction: false,
+        loop: true
+        // 如果需要分页器
+        //pagination: '.swiper-pagination',
+        // 改变自动更新
+        //observer:true,
+        //observeParents:true
+      });
     }
 
+    // 秒杀计时器
+    function countdown(){
+      // 倒计时
+      var timeObj={
+        h:1,
+        m:37,
+        s:13
+      };
+      var timeStr=toDouble(timeObj.h)+toDouble(timeObj.m)+toDouble(timeObj.s);
+      var timeList=document.getElementsByClassName('time-text');
+      for(var i=0;i<timeList.length;i++){
+        timeList[i].innerHTML=timeStr[i];
+      }
+      function toDouble(num){
+        if(num<10){
+          return '0'+num;
+        }else{
+          return ''+num;
+        }
+      }
+      var timer=null;
+      timer=setInterval(function(){
+        timeObj.s--;
+        if(timeObj.s==-1){
+          timeObj.m--;
+          timeObj.s=59;
+        }
+        if(timeObj.m==-1){
+          timeObj.h--;
+          timeObj.m=59;
+        }
+        if(timeObj.h==-1){
+          timeObj.h=0;
+          timeObj.m=0;
+          timeObj.s=0;
+          clearInterval(timer);
+        }
+        timeStr=toDouble(timeObj.h)+toDouble(timeObj.m)+toDouble(timeObj.s);
+        for(var i=0;i<timeList.length;i++){
+          timeList[i].innerHTML=timeStr[i];
+        }
+      },1000)
+    }
 
   }]);

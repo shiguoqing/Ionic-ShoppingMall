@@ -30,30 +30,57 @@
         <div class="swiper-pagination"></div>
       </div>
     </div>
-    
-    <div class="function">
-      <div class="row">
-        <div class="col"><img src="img/home/home-func-1.jpg"></div>
-        <div class="col"><img src="img/home/home-func-2.jpg"></div>
-        <div class="col"><img src="img/home/home-func-3.jpg"></div>
-        <div class="col"><img src="img/home/home-func-4.jpg"></div>
-      </div>
-      <div class="row">
-        <div class="col"><img src="img/home/home-func-5.jpg"></div>
-        <div class="col"><img src="img/home/home-func-6.jpg"></div>
-        <div class="col"><img src="img/home/home-func-7.jpg"></div>
-        <div class="col"><img src="img/home/home-func-8.jpg"></div>
-      </div>
-    </div>
+
+    <!-- 功能导航 -->
+    <nav id="nav">
+      <span>
+        <img src="img/home/nav0.png" alt="">
+        <h2>分类查询</h2>
+      </span>
+      <span>
+        <img src="img/home/nav1.png" alt="">
+        <h2>物流查询</h2>
+      </span>
+      <span>
+        <img src="img/home//nav2.png" alt="">
+        <h2>购物车</h2>
+      </span>
+      <span>
+        <img src="img/home/nav3.png" alt="">
+        <h2>我的京东</h2>
+      </span>
+      <span>
+        <img src="img/home/nav4.png" alt="">
+        <h2>充值</h2>
+      </span>
+      <span>
+        <img src="img/home/nav5.png" alt="">
+        <h2>领券中心</h2>
+      </span>
+      <span>
+        <img src="img/home/nav6.png" alt="">
+        <h2>生活团购</h2>
+      </span>
+      <span>
+        <img src="img/home/nav7.png" alt="">
+        <h2>我的关注</h2>
+      </span>
+    </nav>
+
+    <!--头条-->
     <div class="toutiao">
       <img src="img/home/home-toutiao.jpg">
-      <!--<ul>-->
-        <!--<li>1</li>-->
-        <!--<li>2</li>-->
-        <!--<li>3</li>-->
-      <!--</ul>-->
+      <div id="toutiaoSlider" class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">兰博丹尼 可爱零钱包 5555</div>
+          <div class="swiper-slide">桂格即食燕麦片超值装1478g</div>
+          <div class="swiper-slide">维达 卫生纸 140g卷纸*10卷</div>
+        </div>
+      </div>
     </div>
-    <div class="ad padding-top">
+
+    <!--广告1-->
+    <div class="ad">
       <ion-slide-box show-pager="true" auto-play="true" does-continue="true">
         <ion-slide>
           <img src="img/home/home-ad-1.jpg">
@@ -67,34 +94,60 @@
       </ion-slide-box>
     </div>
 
-    <div class="kill">
-      <div>
-        <span>掌上秒杀</span>
+    <!-- 秒杀 -->
+    <div id="centent">
+      <div class="centent-top">
+        <span></span>
+        <h2>掌上秒杀</h2>
+        <div class="centent-time">
+          <span class="time-text">0</span>
+          <span class="time-text">0</span>
+          <span>:</span>
+          <span class="time-text">0</span>
+          <span class="time-text">0</span>
+          <span>:</span>
+          <span class="time-text">0</span>
+          <span class="time-text">0</span>
+        </div>
+        <div class="centent-more">
+          更多>
+        </div>
       </div>
-      <div>
-        <div class="row">
-          <div class="col"><img src="img/home/home-func-1.jpg"></div>
-          <div class="col"><img src="img/home/home-func-2.jpg"></div>
-          <div class="col"><img src="img/home/home-func-3.jpg"></div>
-          <div class="col"><img src="img/home/home-func-4.jpg"></div>
+      <ul class="centent-bottom">
+        <li>
+          <img src="img/home/seckill_1.jpg" alt="">
+          <span class="seckill-now">￥11.11</span>
+          <span class="seckill-old">￥39.00</span>
+        </li>
+        <li>
+          <img src="img/home/seckill_1.jpg" alt="">
+          <span class="seckill-now">￥69.00</span>
+          <span class="seckill-old">￥299.00</span>
+        </li>
+        <li>
+          <img src="img/home/seckill_1.jpg" alt="">
+          <span class="seckill-now">￥99.00</span>
+          <span class="seckill-old">￥199.00</span>
+        </li>
+      </ul>
+    </div>
+
+    <!--主题街-->
+    <div class="floor">
+      <div class="floor-title">主题街</div>
+      <div class="floor-product">
+        <div class="floor-product-list floor-left">
+          <img src="img/home/home-theme-3.jpg" alt="">
+        </div>
+        <div class="floor-product-list">
+          <img src="img/home/home-theme-1.jpg" alt="">
+          <img src="img/home/home-theme-2.jpg" alt="">
         </div>
       </div>
     </div>
 
-    <div class="theme">
-      <div>
-        <span>主题街</span>
-      </div>
-      <div>
-        <div>
-          <div><img  style="float: left;width: 50%" src="img/home/home-theme-1.jpg"></div>
-          <div ><img style="float: right; width: 50%" src="img/home/home-theme-3.jpg"></div>
-          <div><img  style="float: left; width: 50%" src="img/home/home-theme-2.jpg"></div>
-          <!--<div class="col"><img src="img/home/home-func-4.jpg"></div>-->
-        </div>
-      </div>
-    </div>
-    <div class="ad padding-top" style="clear: both">
+    <!--广告2-->
+    <div class="ad" style="clear: both">
       <ion-slide-box show-pager="true" auto-play="true" does-continue="true">
         <ion-slide>
           <img src="img/home/home-ad-4.jpg">
@@ -107,17 +160,17 @@
         </ion-slide>
       </ion-slide-box>
     </div>
-    <div class="guess">
-      <div>
-        <span>猜你喜欢</span>
-      </div>
-      <div class="row">
-        <div class="col"><img src="img/home/home-func-1.jpg"></div>
-        <div class="col"><img src="img/home/home-func-2.jpg"></div>
-      </div>
-      <div class="row">
-        <div class="col"><img src="img/home/home-func-5.jpg"></div>
-        <div class="col"><img src="img/home/home-func-6.jpg"></div>
+    <!-- 产品展示 -->
+    <div id="floor-1" class="floor">
+      <div class="floor-title">超值购</div>
+      <div class="floor-product">
+        <div class="floor-product-list floor-left">
+          <img src="img/home/cp1.jpg" alt="">
+        </div>
+        <div class="floor-product-list">
+          <img src="img/home/cp2.jpg" alt="">
+          <img src="img/home/cp3.jpg" alt="">
+        </div>
       </div>
     </div>
   </ion-content>
