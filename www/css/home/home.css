@@ -1,3 +1,16 @@
+#home ion-header-bar{
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  background-image: none;
+}
+
+#home .has-header{
+  top: 0;
+}
+
+
 #home ion-content{
   overflow:scroll;
 
@@ -246,7 +259,7 @@
 }
 
 #home .ad ion-slide img {
-  height: 8%;
+  height: 15%;
   width: 100%;
 }
 

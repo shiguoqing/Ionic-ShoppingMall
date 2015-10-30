@@ -4,7 +4,7 @@
  功  能：商城首页
  ******************************************************/
 angular.module('APT.home.controller', [])
-  .controller('HomeCtrl', ['$scope', '$state','$ionicSlideBoxDelegate', function ($scope, $state,$ionicSlideBoxDelegate) {
+  .controller('HomeCtrl', ['$scope', '$state','$ionicSlideBoxDelegate','$window', function ($scope, $state,$ionicSlideBoxDelegate,$window) {
 
     $scope.$on('$ionicView.enter', function (e) {
       getHeaderSlideData();
@@ -47,7 +47,7 @@ angular.module('APT.home.controller', [])
 
     // 改变头部颜色
     function headerChangeColor(){
-      var bg=window.document.getElementById('home-content');
+      var bg=$window.document.getElementById('home-content');
       var nowOpacity=0;
       bg.onscroll=function(event){
         if(this.scrollTop/250<.85){
@@ -79,17 +79,8 @@ angular.module('APT.home.controller', [])
     function initToutiaoSlide(){
       var toutiaoSwiper = new Swiper('#toutiaoSlider', {
         direction:'vertical',
-        //slidesPerView: 1,
-        //paginationClickable: true,
-        //centeredSlides: true,
         autoplay: 2000,
-        //autoplayDisableOnInteraction: false,
         loop: true
-        // 如果需要分页器
-        //pagination: '.swiper-pagination',
-        // 改变自动更新
-        //observer:true,
-        //observeParents:true
       });
     }
 
