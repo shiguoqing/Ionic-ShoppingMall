@@ -7,12 +7,11 @@ angular.module('APT.home.controller', [])
   .controller('HomeCtrl', ['$scope', '$state','$ionicSlideBoxDelegate', function ($scope, $state,$ionicSlideBoxDelegate) {
 
     $scope.$on('$ionicView.enter', function (e) {
-      homeInit();
+      getHeaderSlideData();
     });
 
-    function homeInit(){
-      getHeaderSlideData();
-    }
+    initHeaderSlide();
+    headerChangeColor();
 
     // 头部滚动条数据
     function getHeaderSlideData(){
@@ -39,7 +38,11 @@ angular.module('APT.home.controller', [])
         }
       ];
 
-      var mySwiper = new Swiper('.swiper-container', {
+    }
+
+    // 初始化头部滚动条
+    function initHeaderSlide(){
+      var mySwiper = new Swiper('#headerSlider', {
         slidesPerView: 1,
         paginationClickable: true,
         centeredSlides: true,
@@ -52,17 +55,19 @@ angular.module('APT.home.controller', [])
         observer:true,
         observeParents:true
       });
-
-
-
     }
 
-    $scope.onSlideChange=function(){
-      if($ionicSlideBoxDelegate.currentIndex()==$ionicSlideBoxDelegate.slidesCount()-1){
-        setTimeout(function(){
-          $ionicSlideBoxDelegate.slide(0,1000);
-        },2000);
+    // 改变头部颜色
+    function headerChangeColor(){
+      var bg=window.document.getElementById('home-content');
+      var nowOpacity=0;
+      bg.onscroll=function(event){
+        if(this.scrollTop/250<.85){
+          nowOpacity=this.scrollTop/250;
+        }
+        document.getElementById("headerBar-bg").style.opacity=nowOpacity;
       }
     }
+
 
   }]);

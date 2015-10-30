@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "ng-cordova": "~0.0.3",
-    "Swiper": "swiper#~3.1.7"
+    "Swiper": "swiper#~3.1.7",
+    "mui": "~0.2.1"
   }
 }

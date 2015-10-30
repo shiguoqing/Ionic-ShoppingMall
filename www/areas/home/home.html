@@ -1,13 +1,17 @@
 <ion-view id="home" view-title="首页" hide-back-button="true" cache-view="false">
-  <ion-content class="scroll-content" scroll="true">
+  <ion-content id="home-content" class="scroll-content" scroll="false">
     <!--头部搜索栏-->
-    <div class="headerBar">
+    <div id="headerBar" class="headerBar">
+      <div id="headerBar-bg"></div>
       <div class="headerBar-logo">
         <i></i>
       </div>
       <div class="headerBar-search">
-        搜索
-        <!--<input class="search" type="text" placeholder="请输入搜索信息">-->
+        <span></span>
+        <div>
+          <input  maxlength="20" autocomplete="true" value="美妆1元起 独家放价"/>
+        </div>
+
       </div>
       <div class="headerBar-login">
         <span>
@@ -17,7 +21,7 @@
     </div>
     <!--头部滚动条-->
     <div class="headerSlider">
-      <div class="swiper-container">
+      <div id="headerSlider" class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide" ng-repeat="item in headerSlideData">
             <img alt="{{item.alt}}" src="{{item.src}}">
@@ -26,6 +30,7 @@
         <div class="swiper-pagination"></div>
       </div>
     </div>
+    
     <div class="function">
       <div class="row">
         <div class="col"><img src="img/home/home-func-1.jpg"></div>

@@ -1,7 +1,12 @@
+#home ion-content{
+  overflow:scroll;
+
+}
+
 /*头部搜索栏*/
 #home .headerBar {
   background-color: transparent;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 2;
   display: inline-block;
@@ -9,37 +14,81 @@
   height: 35px;
 }
 
+#home #headerBar-bg{
+  background-color: #c91523;
+  opacity: 0;
+  height: 35px;
+  position: absolute;
+  width: 100%;
+}
+
 #home .headerBar-logo {
+  position: absolute;
+  margin: 0;
+  padding: 0;
   width: 56px;
-  height: 21px;
-  display: inline-block
+  height: 35px;
+  display: inline-block;
 }
 
 #home .headerBar-logo i {
   display: inline-block;
   height:21px;
   width: 56px;
-  margin-top: 7px;
-  margin-left: 10px;
   background: url("../../img/common/sprites.png") no-repeat;
   background-position: 0 -109px;
   background-size: 200px 200px;
+  margin-left: 7px;
+  margin-top: 7px;
 }
 
 #home .headerBar-search {
-  width: 60%;
-  height: 30px;
+  position:absolute;
+  left: 66px;
+  right: 40px;
+  width: auto;
+  height: 25px;
+  margin-top: 5px;
   color: #ffffff;
   display: inline-block;
   background-color: #ffffff;
   border-radius: 15px;
 }
 
-#home .headerBar-login {
+#home .headerBar-search span{
+  display: inline-block;
+  height:20px;
+  width: 20px;
+  background: url("../../img/common/sprites.png") no-repeat;
+  background-position: -60px -109px;
+  background-size: 200px 200px;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+#home .headerBar-search div{
+  display:inline-block;
+  height:100%;
   width: auto;
+}
+#home .headerBar-search div input{
+  border: 0;
+  display: inline-block;
+  background: 0;
+  font-size: 13px;
+  line-height: 1.2em;
+  height: 1.4em;
+  width: 100%;
+  vertical-align: middle;
+  margin-top: -15px;
+  color: #989191;
+}
+
+#home .headerBar-login {
+  width: 30px;
   height:inherit;
   position: absolute;
-  right: 10px;
+  right: 7px;
   display: inline-block;
 }
 
@@ -49,7 +98,6 @@
   font-size: 15px;
   display: inline-block;
 }
-
 
 /*头滚动条*/
 #home .headerSlider .swiper-container {
