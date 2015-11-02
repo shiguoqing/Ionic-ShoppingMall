@@ -1,4 +1,50 @@
-<ion-view id="guidePage" view-title="分类" hide-back-button="true" cache-view="false">
+<ion-view id="category" view-title="商品分类" hide-back-button="true" cache-view="false">
   <ion-content class="scroll-content  has-header" scroll="false">
-   分类页面
+    <header id="header">
+      <div class="header-left">
+        <span></span>
+      </div>
+      <div class="header-center">
+        <span></span>
+      </div>
+      <div class="header-right">
+        <span></span>
+      </div>
+    </header>
+    <nav id="nav">
+      <ul>
+        <!--ng-click="getCategoryDetailData(item.typeNumber)"-->
+        <li ng-class="$index==0?'nav-current':'nav-blur'" ng-repeat="item in categoryData" >{{item.name}}</li>
+      </ul>
+    </nav>
+    <div id="pro">
+      <div class="pro-scroll">
+        <div class="pro-warp">
+          <div class="banner">
+            <img src="img/category/banner_1.jpg" alt="">
+          </div>
+          <div class="content">
+            <div class="content-title">
+              <span>热卖品类</span>
+            </div>
+            <div class="content-body">
+              <li class="content-body-list" ng-repeat="item in categoryDetailData">
+                <img src="{{item.src}}" alt="">
+                <span>{{item.name}}</span>
+              </li>
+            </div>
+            <div class="content-title">
+              <span>冬季新品</span>
+            </div>
+            <div class="content-body">
+              <li class="content-body-list" ng-repeat="item in categoryDetailData">
+                <img src="{{item.src}}" alt="">
+                <span>{{item.name}}</span>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
 </ion-view>

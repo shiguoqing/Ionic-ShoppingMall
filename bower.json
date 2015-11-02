@@ -5,8 +5,8 @@
     "ionic": "driftyco/ionic-bower#1.1.0"
   },
   "dependencies": {
-    "ng-cordova": "~0.0.3",
     "Swiper": "swiper#~3.1.7",
-    "mui": "~0.2.1"
+    "mui": "~0.2.1",
+    "ngCordova": "~0.1.20-alpha"
   }
 }

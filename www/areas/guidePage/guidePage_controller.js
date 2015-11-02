@@ -4,7 +4,7 @@
  功  能：引导页
  ******************************************************/
 angular.module('APT.guidePage.controller', [])
-  .controller('GuidePageCtrl', ['$scope', '$state', function ($scope, $state) {
+  .controller('GuidePageCtrl', ['$scope', '$state','$ionicHistory', function ($scope, $state,$ionicHistory) {
 
     $scope.$on('$ionicView.enter', function (e) {
     });
@@ -12,5 +12,7 @@ angular.module('APT.guidePage.controller', [])
     // 返回按钮方法
     $scope.start = function () {
       $state.go("login");
+      $ionicHistory.clearHistory();
+      $ionicHistory.clearCache();
     };
   }]);
