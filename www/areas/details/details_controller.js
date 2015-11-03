@@ -3,8 +3,8 @@
  创建人：                修改时间：
  功  能：商品详细页面
  ******************************************************/
-angular.module('APT.goodsList.controller', [])
-  .controller('GoodsListCtrl', ['$scope', '$ionicHistory','$state', function ($scope, $ionicHistory,$state) {
+angular.module('APT.details.controller', [])
+  .controller('DetailsCtrl', ['$scope', '$ionicHistory','$state', function ($scope, $ionicHistory,$state) {
 
     $scope.$on('$ionicView.enter', function (e) {
 

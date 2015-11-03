@@ -1,3 +1,9 @@
-/**
- * Created by shiguoqing on 2015/10/29.
- */
+angular.module('APT.details.route', ['APT.details.controller'])
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('details', {
+        url: '/details',
+        templateUrl: 'areas/details/details.html',
+        controller: 'DetailsCtrl'
+      })
+  });
