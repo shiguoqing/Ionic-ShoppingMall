@@ -1,25 +1,25 @@
 <ion-view id="details" view-title="商品详细页面" hide-back-button="true" cache-view="false">
-  <ion-content class="scroll-content  has-header" scroll="false">
-    <!-- 头部 -->
-    <header id="header">
-      <div class="header-left">
-        <a href="index.html">
-          <span></span>
-        </a>
-      </div>
-      <div class="header-center">
-        <span>商品详情</span>
-      </div>
-      <div class="header-right">
+  <!-- 头部 -->
+  <header id="header">
+    <div class="header-left">
+      <a href="index.html">
         <span></span>
-      </div>
-    </header>
+      </a>
+    </div>
+    <div class="header-center">
+      <span>商品详情</span>
+    </div>
+    <div class="header-right">
+      <span></span>
+    </div>
+  </header>
+  <ion-content class="scroll-content has-header" scroll="false">
     <!-- 产品展示图 -->
     <div id="view">
       <div class="viewWarp">
         <ul>
           <li>
-            <img src="./img/detail01.jpg" alt="">
+            <img src="img/details/detail01.jpg" alt="">
           </li>
         </ul>
         <div class="viewText"><span>1</span>/6</div>
@@ -76,20 +76,20 @@
         <span class="listRight">+</span>
       </div>
     </div>
-    <!-- 固定底边栏 -->
-    <div id="buy">
-      <div class="buyLeft">
-        <div class="guanzhu">
-          <span></span>
-          <strong>关注</strong>
-        </div>
-        <div class="gouwuche">
-          <span></span>
-          <strong>购物车</strong>
-        </div>
-      </div>
-      <div class="buyCenter">加入购物车</div>
-      <div class="buyRight">立即购买</div>
-    </div>
   </ion-content>
+  <!-- 固定底边栏 -->
+  <div id="buy">
+    <div class="buyLeft">
+      <div class="guanzhu">
+        <span></span>
+        <strong>关注</strong>
+      </div>
+      <div class="gouwuche" ui-sref="indexTab.cart">
+        <span></span>
+        <strong>购物车</strong>
+      </div>
+    </div>
+    <div class="buyCenter">加入购物车</div>
+    <div class="buyRight">立即购买</div>
+  </div>
 </ion-view>
