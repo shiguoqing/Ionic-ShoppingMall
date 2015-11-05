@@ -31,54 +31,30 @@
       pulling-text="获取最新数据..."
       refreshing-text="刷新完毕"
       on-refresh="func_refreshGoodsList()">
-
     </ion-refresher>
-    <!--<ion-list>-->
-      <!--<ion-item ng-repeat="item in goodsData">-->
-        <div class="pro" ng-repeat="item in obj_goodsListData">
-          <div class="pro-warp">
-            <div class="pro-body">
-              <div class="pro-body-des">
-                <a href="detail.html">
-                  <img ng-src="{{item.src}}" alt="">
-                </a>
-                <div class="pro-body-des-text">
-                  <span>{{item.name}}</span>
-                  <b>￥{{item.price}}</b>
-                  <div class="pro-body-des-con">
-                    <span>{{item.haoping}}%好评</span>
-                    <span>{{item.buy}}人</span>
-                  </div>
-                </div>
+    <div class="pro" ng-repeat="item in obj_goodsListData">
+      <div class="pro-warp" ui-sref="details({productId:{{item.productId}}})">
+        <div class="pro-body">
+          <div class="pro-body-des">
+            <a href="detail.html">
+              <img ng-src="{{item.src}}" alt="">
+            </a>
+            <div class="pro-body-des-text">
+              <span>{{item.name}}</span>
+              <b>￥{{item.price}}</b>
+              <div class="pro-body-des-con">
+                <span>{{item.haoping}}%好评</span>
+                <span>{{item.buy}}人</span>
               </div>
             </div>
           </div>
         </div>
-        <!--<a style="float: left;width: 80%"  ng-href="#/approvalDetail/{{itemData}}">-->
-          <!--&lt;!&ndash;<a style="float: left;width: 80%"  ng-click="init()">&ndash;&gt;-->
-          <!--<h2>{{itemData.Subject}}</h2>-->
-          <!--<p class="padding-right" style="float: left">{{itemData.BillNumber}}</p>-->
-          <!--<p class="padding-right" style="float: left">{{itemData.CreateTime}}</p>-->
-          <!--&lt;!&ndash;<p class="padding-left" style="float: left;">{{itemData.Amount}}</p>&ndash;&gt;-->
-        <!--</a>-->
-        <!--<label class="checkbox" style="float: right" ng-show="flag.showCheckbox">-->
-          <!--<input type="checkbox" ng-value="itemData.TaskID">-->
-        <!--</label>-->
-        <!--&lt;!&ndash;<ion-checkbox  class="" ></ion-checkbox>&ndash;&gt;-->
-        <!--&lt;!&ndash;<a style="float: right" ng-href="#/approval/{{itemData}}">&ndash;&gt;-->
-        <!--&lt;!&ndash;<button class="button button-right button-positive"> 批准</button>&ndash;&gt;-->
-        <!--&lt;!&ndash;</a>&ndash;&gt;-->
-        <!--<ion-option-button  class="button-assertive" ng-click="quickApproval(itemData.TaskID)">审批</ion-option-button>-->
-        <!--&lt;!&ndash;<ion-option-button class="button-positive">&ndash;&gt;-->
-        <!--&lt;!&ndash;退回&ndash;&gt;-->
-        <!--&lt;!&ndash;</ion-option-button>&ndash;&gt;-->
-        <!--&lt;!&ndash;<button ng-click="confirmApproval()">nihao</button>&ndash;&gt;-->
-      <!--</ion-item>-->
-    <!--</ion-list>-->
+      </div>
+    </div>
     <div ng-hide="pms_isMoreItemsAvailable" style="text-align: center">
       <span>我去，地主家也没有余粮啊！</span>
     </div>
-    <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="1%">
+    <ion-infinite-scroll on-infinite="func_loadMoreGoodsList()" distance="1%">
     </ion-infinite-scroll>
   </ion-content>
 </ion-view>

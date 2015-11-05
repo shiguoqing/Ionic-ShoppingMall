@@ -20,7 +20,7 @@
       <div class="pro-scroll">
         <div class="pro-warp">
           <div class="banner">
-            <img src="img/category/banner_1.jpg" alt="">
+            <img ng-src="img/category/banner_1.jpg" alt="">
           </div>
           <div class="content">
             <div class="content-title">
@@ -28,7 +28,7 @@
             </div>
             <div class="content-body">
               <li class="content-body-list" ng-repeat="item in categoryDetailData" ui-sref="goodsList({typeNumber:1})">
-                <img src="{{item.src}}" alt="">
+                <img ng-src="{{item.src}}" alt="">
                 <span>{{item.name}}</span>
               </li>
             </div>
@@ -37,7 +37,7 @@
             </div>
             <div class="content-body">
               <li class="content-body-list" ng-repeat="item in categoryDetailData">
-                <img src="{{item.src}}" alt="">
+                <img ng-src="{{item.src}}" alt="">
                 <span>{{item.name}}</span>
               </li>
             </div>
