@@ -14,7 +14,12 @@
 - 12
 - 44
 
-##其他
+
+##特殊的js插件放在locallib目录下
+1.MUI用bower下载的不是完整版，如果想用可以手动下载MUI然后引入各种js和css
+
+
+##其他（不需要安装）
 bower install pixi
 
 

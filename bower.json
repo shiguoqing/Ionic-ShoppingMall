@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "Swiper": "swiper#~3.1.7",
-    "mui": "~0.2.1",
-    "ngCordova": "~0.1.20-alpha"
+    "ngCordova": "~0.1.20-alpha",
+    "mui": "https://github.com/dcloudio/mui"
   }
 }

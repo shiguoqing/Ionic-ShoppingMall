@@ -1,8 +1,65 @@
-#login .loginError{
-  color: red;
-}
 
-#login ion-header-bar{
-  font-size: large;
-  background-color: transparent;
+#login .mui-content{
+  height: 100%;
+}
+#login .area {
+  margin: 20px auto 0px auto;
+}
+#login .mui-input-group {
+  margin-top: 10px;
+}
+#login .mui-input-group:first-child {
+  margin-top: 20px;
+}
+#login .mui-input-group label {
+  width: 22%;
+}
+#login .mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+  width: 78%;
+}
+#login .mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+  top: 6px;
+}
+#login .mui-content-padded {
+  margin-top: 25px;
+}
+#login .mui-btn {
+  padding: 10px;
+}
+#login .link-area {
+  display: block;
+  margin-top: 25px;
+  text-align: center;
+}
+#login .spliter {
+  color: #bbb;
+  padding: 0px 8px;
+}
+#login .oauth-area {
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+#login .oauth-area .oauth-btn {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: 30px 30px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0px 20px;
+  /*-webkit-filter: grayscale(100%); */
+
+  border: solid 1px #ddd;
+  border-radius: 25px;
+}
+#login .oauth-area .oauth-btn:active {
+  border: solid 1px #aaa;
 }
