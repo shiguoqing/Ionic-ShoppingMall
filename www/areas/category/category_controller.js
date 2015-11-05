@@ -223,9 +223,4 @@ angular.module('APT.category.controller', [])
       $(e.target).siblings().removeClass().addClass('nav-blur');
     };
 
-    // 返回按钮事件
-    $scope.goBack=function(){
-      $ionicHistory.goBack();
-    };
-
   }]);

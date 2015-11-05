@@ -4,13 +4,13 @@
  功  能：购物车
  ******************************************************/
 angular.module('APT.cart.controller', [])
-  .controller('CartCtrl', ['$scope', '$state', function ($scope, $state) {
+  .controller('CartCtrl', ['$scope', '$state','$ionicHistory', function ($scope, $state,$ionicHistory) {
 
     $scope.$on('$ionicView.enter', function (e) {
     });
 
     // 返回按钮方法
-    $scope.start = function () {
-      $state.go("home");
+    $scope.goBack = function () {
+      $ionicHistory.goBack();
     };
   }]);

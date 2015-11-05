@@ -1,3 +1,7 @@
+#cart ion-content{
+  overflow: scroll;
+}
+
 #cart div,ul,li,h1,h2,h3,img,a{
   font-family:'PingHei';
   font-size:16px;

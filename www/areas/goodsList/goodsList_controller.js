@@ -95,5 +95,12 @@ angular.module('APT.goodsList.controller', ['APT.goodsList.service'])
             $scope.$broadcast('scroll.infiniteScrollComplete');
           });
       };
+
+      // 返回按钮方法
+      $scope.goBack = function () {
+        $ionicHistory.goBack();
+      };
+
+
     }
   ]);

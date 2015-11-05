@@ -11,7 +11,7 @@ angular.module('APT.guidePage.controller', [])
 
     // 返回按钮方法
     $scope.start = function () {
-      $state.go("login");
+      $state.go("indexTab.home");
       $ionicHistory.clearHistory();
       $ionicHistory.clearCache();
     };

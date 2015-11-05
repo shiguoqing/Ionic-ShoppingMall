@@ -1,13 +1,19 @@
 angular.module('APT.cart.route', ['APT.cart.controller'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('indexTab.cart', {
+      .state('cart', {
         url: '/cart',
-        views: {
-          'indexTab-cart': {
-            templateUrl: 'areas/cart/cart.html',
-            controller: 'CartCtrl'
-          }
-        }
-      });
+        templateUrl: 'areas/cart/cart.html',
+        controller: 'CartCtrl'
+      })
+    //$stateProvider
+    //  .state('indexTab.cart', {
+    //    url: '/cart',
+    //    views: {
+    //      'indexTab-cart': {
+    //        templateUrl: 'areas/cart/cart.html',
+    //        controller: 'CartCtrl'
+    //      }
+    //    }
+    //  });
   });

@@ -9,4 +9,9 @@ angular.module('APT.details.controller', [])
     $scope.$on('$ionicView.enter', function (e) {
 
     });
+
+    // 返回按钮方法
+    $scope.goBack = function () {
+      $ionicHistory.goBack();
+    };
   }]);
