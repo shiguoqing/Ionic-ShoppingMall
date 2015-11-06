@@ -1,11 +1,12 @@
-angular.module('APT.indexTab.route', [])
+angular.module('APT.indexTab.route', ['APT.indexTab.controller'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       // 首页tab的虚拟路由
       .state('indexTab', {
         url: "/indexTab",
         abstract: true,
-        templateUrl: "areas/tabs/indexTab.html"
+        templateUrl: "areas/tabs/indexTab.html",
+        controller: 'IndexTabCtrl'
       });
 
       //.state('indexTab.home', {

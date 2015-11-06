@@ -6,15 +6,17 @@
 angular.module('APT.home.controller', [])
   .controller('HomeCtrl', ['$scope', '$state','$ionicSlideBoxDelegate','$window', function ($scope, $state,$ionicSlideBoxDelegate,$window) {
 
-    $scope.$on('$ionicView.enter', function (e) {
-      getHeaderSlideData();
+    $scope.$on('$stateChangeSuccess', function(e) {
     });
 
+    $scope.$on('$ionicView.enter', function (e) {
+    });
+
+    getHeaderSlideData();
     headerChangeColor();
+    countdown();
     initHeaderSlide();
     initToutiaoSlide();
-    countdown();
-
 
 
     // 头部滚动条数据
@@ -41,7 +43,6 @@ angular.module('APT.home.controller', [])
           src:"img/home/home-headerSlide-5.jpg"
         }
       ];
-
     }
 
 
@@ -75,7 +76,7 @@ angular.module('APT.home.controller', [])
       });
     }
 
-    // 初始化头部滚动条
+    // 初始化京东头条滚动条
     function initToutiaoSlide(){
       var toutiaoSwiper = new Swiper('#toutiaoSlider', {
         direction:'vertical',
@@ -86,12 +87,16 @@ angular.module('APT.home.controller', [])
 
     // 秒杀计时器
     function countdown(){
+      if($window.timer){
+        clearInterval($window.timer);
+      }
       // 倒计时
       var timeObj={
         h:1,
         m:37,
         s:13
       };
+
       var timeStr=toDouble(timeObj.h)+toDouble(timeObj.m)+toDouble(timeObj.s);
       var timeList=document.getElementsByClassName('time-text');
       for(var i=0;i<timeList.length;i++){
@@ -104,8 +109,8 @@ angular.module('APT.home.controller', [])
           return ''+num;
         }
       }
-      var timer=null;
-      timer=setInterval(function(){
+
+      $window.timer=setInterval(function(){
         timeObj.s--;
         if(timeObj.s==-1){
           timeObj.m--;
@@ -119,7 +124,7 @@ angular.module('APT.home.controller', [])
           timeObj.h=0;
           timeObj.m=0;
           timeObj.s=0;
-          clearInterval(timer);
+          clearInterval($window.timer);
         }
         timeStr=toDouble(timeObj.h)+toDouble(timeObj.m)+toDouble(timeObj.s);
         for(var i=0;i<timeList.length;i++){
@@ -127,5 +132,6 @@ angular.module('APT.home.controller', [])
         }
       },1000)
     }
+
 
   }]);

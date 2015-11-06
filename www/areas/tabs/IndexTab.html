@@ -1,4 +1,4 @@
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+<ion-tabs class="tabs-icon-top tabs-color-active-positive hide-on-keyboard-open" cache-view="false">
 
   <ion-tab title="首页" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/indexTab/home">
     <ion-nav-view name="indexTab-home"></ion-nav-view>
@@ -8,7 +8,7 @@
     <ion-nav-view name="indexTab-category"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="购物车" icon-off="ion-ios-cart-outline" icon-on="ion-ios-cart" href="#/cart">
+  <ion-tab title="购物车" icon-off="ion-ios-cart-outline" icon-on="ion-ios-cart" href="#/cart"  badge="data.badge" badge-style="badge-assertive">
     <ion-nav-view name="indexTab-cart"></ion-nav-view>
   </ion-tab>
 

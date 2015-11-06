@@ -36,13 +36,10 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
             $rootScope.backButtonPressedOnceToExit = false;
           }, 2000);
         }
-      }else if ($ionicHistory.backView()) {
-        if ($cordovaKeyboard.isVisible) {
-          $cordovaKeyboard.isVisible=false;
-          $cordovaKeyboard.close();
-        } else {
-          $ionicHistory.goBack();
-        }
+      }else if ($cordovaKeyboard.isVisible()) {
+        $cordovaKeyboard.close();
+      }else if($ionicHistory.backView()){
+        $ionicHistory.goBack();
       } else {
         if ($rootScope.backButtonPressedOnceToExit) {
           ionic.Platform.exitApp();

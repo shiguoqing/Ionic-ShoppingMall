@@ -17,42 +17,43 @@
     <!--<div class="padding-top">-->
       <!--<button class="button button-block button-positive" ng-click='login()'>登录</button>-->
     <!--</div>-->
-<div class="mui-select"></div>
-    <header class="mui-bar mui-bar-nav">
-      <h1 class="mui-title">登录</h1>
-    </header>
-    <div class="mui-content">
-      <form id='login-form' class="mui-input-group">
-        <div class="mui-input-row">
-          <label>账号</label>
-          <input id='account' type="text" class="mui-input-clear mui-input" ng-model='loginInfo.userName' placeholder="请输入账号">
+    <!--</ion-content>-->
+  <div class="mui-select">
+      <header class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">登录</h1>
+      </header>
+      <div class="mui-content">
+        <form id='login-form' class="mui-input-group">
+          <div class="mui-input-row">
+            <label>账号</label>
+            <input id='account' type="text" class="mui-input-clear mui-input" ng-model='loginInfo.userName' placeholder="请输入账号">
+          </div>
+          <div class="mui-input-row">
+            <label>密码</label>
+            <input id='password' type="password" class="mui-input-clear mui-input" ng-model='loginInfo.password' placeholder="请输入密码">
+          </div>
+        </form>
+        <div class="loginError padding-left" ng-show='loginInfo.hasError'>
+        {{loginInfo.loginError}}
         </div>
-        <div class="mui-input-row">
-          <label>密码</label>
-          <input id='password' type="password" class="mui-input-clear mui-input" ng-model='loginInfo.password' placeholder="请输入密码">
+        <form class="mui-input-group">
+          <ul class="mui-table-view mui-table-view-chevron">
+            <li class="mui-table-view-cell">
+              自动登录
+              <div id="autoLogin" class="mui-switch">
+                <div class="mui-switch-handle"></div>
+              </div>
+            </li>
+          </ul>
+        </form>
+        <div class="mui-content-padded">
+          <button ng-click="login()" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
+          <div class="link-area"><a id='reg'>注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+          </div>
         </div>
-      </form>
-      <div class="loginError padding-left" ng-show='loginInfo.hasError'>
-      {{loginInfo.loginError}}
-      </div>
-      <form class="mui-input-group">
-        <ul class="mui-table-view mui-table-view-chevron">
-          <li class="mui-table-view-cell">
-            自动登录
-            <div id="autoLogin" class="mui-switch">
-              <div class="mui-switch-handle"></div>
-            </div>
-          </li>
-        </ul>
-      </form>
-      <div class="mui-content-padded">
-        <button ng-click="login()" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
-        <div class="link-area"><a id='reg'>注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
-        </div>
-      </div>
-      <div class="mui-content-padded oauth-area">
+        <div class="mui-content-padded oauth-area">
 
+        </div>
       </div>
-    </div>
-  <!--</ion-content>-->
+  </div>
 </ion-view>

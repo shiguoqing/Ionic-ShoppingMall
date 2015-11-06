@@ -1,5 +1,5 @@
 <ion-view id="home" view-title="首页" hide-back-button="true" cache-view="false">
-  <ion-header-bar>
+  <div>
     <!--头部搜索栏-->
     <div id="headerBar" class="headerBar">
       <div id="headerBar-bg"></div>
@@ -11,15 +11,14 @@
         <div>
           <input  maxlength="20" autocomplete="true" value="美妆1元起 独家放价"/>
         </div>
-
       </div>
-      <div class="headerBar-login" ui-sref="login">
+      <a class="headerBar-login" ng-href="#/login">
         <span>
             登录
         </span>
-      </div>
+      </a>
     </div>
-  </ion-header-bar>
+  </div>
   <ion-content id="home-content" class="scroll-content" scroll="false">
     <!--&lt;!&ndash;头部搜索栏&ndash;&gt;-->
     <!--<div id="headerBar" class="headerBar">-->
@@ -45,7 +44,7 @@
       <div id="headerSlider" class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide" ng-repeat="item in headerSlideData">
-            <img alt="{{item.alt}}" src="{{item.src}}">
+            <img alt="{{item.alt}}" ng-src="{{item.src}}">
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -55,31 +54,31 @@
     <!-- 功能导航 -->
     <nav id="nav">
       <span ui-sref="indexTab.category">
-        <img src="img/home/nav0.png" alt="">
+        <img ng-src="img/home/nav0.png" alt="">
         <h2>分类查询</h2>
       </span>
       <span>
-        <img src="img/home/nav1.png" alt="">
+        <img ng-src="img/home/nav1.png" alt="">
         <h2>物流查询</h2>
       </span>
       <span>
-        <img src="img/home//nav2.png" alt="">
+        <img ng-src="img/home//nav2.png" alt="">
         <h2>购物车</h2>
       </span>
       <span>
-        <img src="img/home/nav3.png" alt="">
+        <img ng-src="img/home/nav3.png" alt="">
         <h2>我的京东</h2>
       </span>
       <span>
-        <img src="img/home/nav4.png" alt="">
+        <img ng-src="img/home/nav4.png" alt="">
         <h2>充值</h2>
       </span>
       <span>
-        <img src="img/home/nav5.png" alt="">
+        <img ng-src="img/home/nav5.png" alt="">
         <h2>领券中心</h2>
       </span>
       <span>
-        <img src="img/home/nav6.png" alt="">
+        <img ng-src="img/home/nav6.png" alt="">
         <h2>生活团购</h2>
       </span>
       <span>
@@ -90,7 +89,7 @@
 
     <!--头条-->
     <div class="toutiao">
-      <img src="img/home/home-toutiao.jpg">
+      <img ng-src="img/home/home-toutiao.jpg">
       <div id="toutiaoSlider" class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">兰博丹尼 可爱零钱包 5555</div>
@@ -104,13 +103,13 @@
     <div class="ad">
       <ion-slide-box show-pager="true" auto-play="true" does-continue="true">
         <ion-slide>
-          <img src="img/home/home-ad-1.jpg">
+          <img ng-src="img/home/home-ad-1.jpg">
         </ion-slide>
         <ion-slide>
-          <img src="img/home/home-ad-2.jpg">
+          <img ng-src="img/home/home-ad-2.jpg">
         </ion-slide>
         <ion-slide>
-          <img src="img/home/home-ad-3.jpg">
+          <img ng-src="img/home/home-ad-3.jpg">
         </ion-slide>
       </ion-slide-box>
     </div>
@@ -136,17 +135,17 @@
       </div>
       <ul class="centent-bottom">
         <li>
-          <img src="img/home/seckill_1.jpg" alt="">
+          <img ng-src="img/home/seckill_1.jpg" alt="">
           <span class="seckill-now">￥11.11</span>
           <span class="seckill-old">￥39.00</span>
         </li>
         <li>
-          <img src="img/home/seckill_1.jpg" alt="">
+          <img ng-src="img/home/seckill_1.jpg" alt="">
           <span class="seckill-now">￥69.00</span>
           <span class="seckill-old">￥299.00</span>
         </li>
         <li>
-          <img src="img/home/seckill_1.jpg" alt="">
+          <img ng-src="img/home/seckill_1.jpg" alt="">
           <span class="seckill-now">￥99.00</span>
           <span class="seckill-old">￥199.00</span>
         </li>
@@ -158,11 +157,11 @@
       <div class="floor-title">主题街</div>
       <div class="floor-product">
         <div class="floor-product-list floor-left">
-          <img src="img/home/home-theme-3.jpg" alt="">
+          <img ng-src="img/home/home-theme-3.jpg" alt="">
         </div>
         <div class="floor-product-list">
-          <img src="img/home/home-theme-1.jpg" alt="">
-          <img src="img/home/home-theme-2.jpg" alt="">
+          <img ng-src="img/home/home-theme-1.jpg" alt="">
+          <img ng-src="img/home/home-theme-2.jpg" alt="">
         </div>
       </div>
     </div>
@@ -171,13 +170,13 @@
     <div class="ad" style="clear: both">
       <ion-slide-box show-pager="true" auto-play="true" does-continue="true">
         <ion-slide>
-          <img src="img/home/home-ad-4.jpg">
+          <img ng-src="img/home/home-ad-4.jpg">
         </ion-slide>
         <ion-slide>
-          <img src="img/home/home-ad-5.jpg">
+          <img ng-src="img/home/home-ad-5.jpg">
         </ion-slide>
         <ion-slide>
-          <img src="img/home/home-ad-6.jpg">
+          <img ng-src="img/home/home-ad-6.jpg">
         </ion-slide>
       </ion-slide-box>
     </div>
@@ -186,11 +185,11 @@
       <div class="floor-title">超值购</div>
       <div class="floor-product">
         <div class="floor-product-list floor-left">
-          <img src="img/home/cp1.jpg" alt="">
+          <img ng-src="img/home/cp1.jpg" alt="">
         </div>
         <div class="floor-product-list">
-          <img src="img/home/cp2.jpg" alt="">
-          <img src="img/home/cp3.jpg" alt="">
+          <img ng-src="img/home/cp2.jpg" alt="">
+          <img ng-src="img/home/cp3.jpg" alt="">
         </div>
       </div>
     </div>

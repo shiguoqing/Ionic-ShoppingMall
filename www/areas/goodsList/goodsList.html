@@ -33,10 +33,10 @@
       on-refresh="func_refreshGoodsList()">
     </ion-refresher>
     <div class="pro" ng-repeat="item in obj_goodsListData">
-      <div class="pro-warp" ui-sref="details({productId:{{item.productId}}})">
+      <div class="pro-warp">
         <div class="pro-body">
           <div class="pro-body-des">
-            <a href="detail.html">
+            <a ng-href="#/details/{{item.productId}}">
               <img ng-src="{{item.src}}" alt="">
             </a>
             <div class="pro-body-des-text">

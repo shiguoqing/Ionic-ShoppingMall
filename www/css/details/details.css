@@ -1,5 +1,6 @@
 #details ion-content{
   overflow: scroll;
+  background-color: #efeff4;
 }
 
 #details div,ul,li,h1,h2,h3,img,a{
