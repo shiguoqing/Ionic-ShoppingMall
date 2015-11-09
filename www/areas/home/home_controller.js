@@ -6,12 +6,6 @@
 angular.module('APT.home.controller', [])
   .controller('HomeCtrl', ['$scope', '$state','$ionicSlideBoxDelegate','$window', function ($scope, $state,$ionicSlideBoxDelegate,$window) {
 
-    $scope.$on('$stateChangeSuccess', function(e) {
-    });
-
-    $scope.$on('$ionicView.enter', function (e) {
-    });
-
     getHeaderSlideData();
     headerChangeColor();
     countdown();
@@ -133,5 +127,11 @@ angular.module('APT.home.controller', [])
       },1000)
     }
 
+
+    $scope.$on('$stateChangeSuccess', function(e) {
+    });
+
+    $scope.$on('$ionicView.enter', function (e) {
+    });
 
   }]);

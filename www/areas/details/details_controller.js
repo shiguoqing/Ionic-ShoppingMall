@@ -4,11 +4,24 @@
  功  能：商品详细页面
  ******************************************************/
 angular.module('APT.details.controller', [])
-  .controller('DetailsCtrl', ['$scope', '$ionicHistory','$state', function ($scope, $ionicHistory,$state) {
+  .controller('DetailsCtrl', ['$scope', '$ionicHistory','$state','$stateParams', function ($scope, $ionicHistory,$state,$stateParams) {
 
     $scope.$on('$ionicView.enter', function (e) {
 
     });
+
+    $scope.obj_goodsInfo={
+      goodsId:"20078KM138",
+      description:"若昕 韩版睡衣女冬法兰绒家居服加厚珊瑚绒女人卡通甜美睡衣秋冬套装 66651K 女 M",
+      prise:"",
+      picture:[],
+      isFork:false
+    }
+
+
+
+
+
 
     // 返回按钮方法
     $scope.goBack = function () {

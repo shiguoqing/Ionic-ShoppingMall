@@ -63,3 +63,10 @@
 #login .oauth-area .oauth-btn:active {
   border: solid 1px #aaa;
 }
+
+
+#login .toggle{
+  float: right;
+  height: 30px;
+  text-align: center;
+}
