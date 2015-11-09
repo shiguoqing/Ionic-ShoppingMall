@@ -3,6 +3,11 @@
   background-color: #efeff4;
 }
 
+#details  i.badge {
+  position: absolute;
+  top: 5px;
+}
+
 #details div,ul,li,h1,h2,h3,img,a{
   font-family:'PingHei';
   font-size:16px;

@@ -84,12 +84,13 @@
         <span></span>
         <strong>关注</strong>
       </div>
-      <div class="gouwuche" ui-sref="cart" badge="cartCount" badge-style="badge-assertive">
+      <div class="gouwuche" ui-sref="cart">
         <span></span>
+        <i class="badge badge-assertive">{{obj_cartCount.count}}</i>
         <strong>购物车</strong>
       </div>
     </div>
-    <div class="buyCenter">加入购物车</div>
+    <div class="buyCenter" ng-click="func_addToCart()">加入购物车</div>
     <div class="buyRight">立即购买</div>
   </div>
 </ion-view>
