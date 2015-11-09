@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ngCordova'])
+angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ngCordova','indexdb'])
 
-.run(function($ionicPlatform,$cordovaToast,$cordovaKeyboard,$ionicHistory,$rootScope, $location, $timeout,CommonJs) {
+.run(function($ionicPlatform,$cordovaToast,$cordovaKeyboard,$ionicHistory,$rootScope, $location, $timeout,CommonJs,IndexdbJs) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -22,6 +22,10 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
     }
   });
 
+    alert('db');
+    IndexdbJs.save("user",{userid:12,name:"shiguoqing"}),function(e){
+      console.log(e);
+    };
 
     //物理返回按钮控制&双击退出应用
     $ionicPlatform.registerBackButtonAction(function (e) {
@@ -30,20 +34,24 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
         if ($rootScope.backButtonPressedOnceToExit) {
           ionic.Platform.exitApp();
         } else {
+          alert('上面的退出');
           $rootScope.backButtonPressedOnceToExit = true;
           $cordovaToast.showShortBottom('再按一次退出系统');
           setTimeout(function () {
             $rootScope.backButtonPressedOnceToExit = false;
           }, 2000);
         }
-      }else if ($cordovaKeyboard.isVisible()) {
+      }else if($cordovaKeyboard.isVisible()) {
+        alert('键盘关闭');
         $cordovaKeyboard.close();
       }else if($ionicHistory.backView()){
+        alert('返回视图');
         $ionicHistory.goBack();
       } else {
         if ($rootScope.backButtonPressedOnceToExit) {
           ionic.Platform.exitApp();
         }else{
+          alert('地下的退出');
           $rootScope.backButtonPressedOnceToExit = true;
           $cordovaToast.showShortBottom('再按一次退出系统');
           setTimeout(function () {

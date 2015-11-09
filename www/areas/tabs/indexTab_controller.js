@@ -5,8 +5,7 @@ angular.module('APT.indexTab.controller', [])
 
     });
 
-    $scope.data={
-      badge:45
+    $scope.obj_cartCount={
+      count:localStorage["cartCount"]
     }
-
   }]);

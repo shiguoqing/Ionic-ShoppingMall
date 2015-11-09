@@ -27,10 +27,8 @@ angular.module('APT.details.controller', [])
      *加入购物车方法
      */
     $scope.func_addToCart=function(){
-      localStorage["cartCount"]=2;
       $scope.obj_cartCount.count++;
-      Todo:加入购物车数量加一
-      Todo:h5存储
+      localStorage["cartCount"]=$scope.obj_cartCount.count;
 
     }
 
