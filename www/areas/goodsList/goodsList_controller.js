@@ -4,8 +4,8 @@
  功  能：商品列表页面
  ******************************************************/
 angular.module('APT.goodsList.controller', ['APT.goodsList.service'])
-  .controller('GoodsListCtrl', ['$scope', '$ionicHistory','$state','GoodsListFty','CommonJs','$stateParams',
-    function ($scope, $ionicHistory,$state,GoodsListFty,CommonJs,$stateParams) {
+  .controller('GoodsListCtrl', ['$scope', '$ionicHistory','$state','GoodsListFty','CommonJs','$stateParams','$ionicLoading','$timeout',
+    function ($scope, $ionicHistory,$state,GoodsListFty,CommonJs,$stateParams,$ionicLoading,$timeout) {
 
       $scope.$on('$stateChangeSuccess', function(e) {
         $scope.func_refreshGoodsList();
@@ -67,10 +67,10 @@ angular.module('APT.goodsList.controller', ['APT.goodsList.service'])
        * 上拉加载更多方法
        */
       $scope.func_loadMoreGoodsList = function () {
+        $ionicLoading.show({
+          template: "正在载入数据，请稍后..."
+        });
 
-        //if($scope.obj_pagingInfo.pageNum==1&&$scope.pms_isMoreItemsAvailable==true) {
-        //  $scope.$broadcast('scroll.infiniteScrollComplete');
-        //}
         $scope.obj_pagingInfo.pageNum = $scope.obj_pagingInfo.pageNum + 1;
         $scope.obj_pagingInfo.typeNumber= $stateParams.typeNumber;
         console.log('加载更多'+$scope.obj_pagingInfo.pageNum);
@@ -93,6 +93,9 @@ angular.module('APT.goodsList.controller', ['APT.goodsList.service'])
         ).finally(function () {
             // 加载更多完毕要广播刷新完毕事件
             $scope.$broadcast('scroll.infiniteScrollComplete');
+            $timeout(function(){
+              $ionicLoading.hide();
+            },2000);
           });
       };
 
