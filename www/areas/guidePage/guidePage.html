@@ -1,16 +1,53 @@
 <ion-view id="guidePage" view-title="引导页" hide-back-button="true" cache-view="false">
-  <!--<ion-content class="scroll-content  has-header" scroll="false">-->
-  <ion-slide-box show-pager="false">
-    <ion-slide>
-      <img src="img/guidePage/xiangdao1@2x.png">
-    </ion-slide>
-    <ion-slide>
-      <img src="img/guidePage/xiangdao2@2x.png">
-    </ion-slide>
-    <ion-slide>
-        <img src="img/guidePage/xiangdao3@2x.png">
-        <a class="button positive" ng-click="start()">开始使用</a>
-    </ion-slide>
-  </ion-slide-box>
-  <!--</ion-content>-->
+  <div id="guideSlide" class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="item-logo" style="background-color: #D74B28">
+          <a href="#">
+            传智播客
+          </a>
+          <div class="animate guide-show">
+            <h2 class="animated bounceInDown">小巧高能</h2>
+            <li class="animated bounceInLeft">几十K的JS和CSS</li>
+            <li class="animated bounceInRight">上百种控件样式和模板</li>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="item-logo" style="background-color: #02C1ED;">
+          <a href="#">
+            传智播客
+          </a>
+          <div id="tips-2" class="animate hidden">
+            <h2 class="animated bounceInDown">原生UI</h2>
+            <li class="animated bounceInLeft">以iOS原生UI为基础</li>
+            <li class="animated bounceInRight">补充Android特有样式</li>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="item-logo" style="background-color: #67C962;">
+          <a href="#">
+            传智播客
+          </a>
+          <div id="tips-3"class="animate hidden">
+            <h2 class="animated bounceInDown">牛逼的地方</h2>
+            <li class="animated bounceInLeft">传智播客牛逼</li>
+            <li class="animated bounceInRight">不是吹nb!是真nb！</li>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="item-logo" style="background-color: #FCD208;">
+          <a href="#">
+            传智播客
+          </a>
+          <div class="animate guide-show">
+            <button id='close' class="mui-btn mui-btn-warning mui-btn-outlined">立即体验</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
 </ion-view>

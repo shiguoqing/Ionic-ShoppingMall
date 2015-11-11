@@ -1,6 +1,7 @@
 #details ion-content{
   overflow: scroll;
   background-color: #efeff4;
+  padding-bottom: 60px;
 }
 
 #details  i.badge {
@@ -236,6 +237,36 @@
   background-size:50px 50px;
   margin:10px auto 0;
 }
-#details .songzhi{
 
+#details #list span{
+  font-size: 14px;
+  color: #848689;
+  margin-left: 8px;
+  font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
 }
+
+#details #otherInfo{
+  display: inline-block;
+  font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+}
+
+#details #otherInfo span,p{
+  display: inline-block;
+}
+
+#details #otherInfo span{
+  font-size: 14px;
+  color: #848689;
+  float: left;
+  margin-left: 8px;
+  width: 10%;
+}
+
+#details #otherInfo p{
+  font-size: 14px;
+  color: #000;
+  padding-right: 5px;
+  width: 80%;
+}
+
+

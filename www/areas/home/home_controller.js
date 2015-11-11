@@ -132,6 +132,7 @@ angular.module('APT.home.controller', [])
     });
 
     $scope.$on('$ionicView.enter', function (e) {
-    });
+      $ionicSlideBoxDelegate.update();
+    })
 
   }]);

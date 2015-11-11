@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ngCordova','indexdb'])
 
-.run(function($ionicPlatform,$cordovaToast,$cordovaKeyboard,$ionicHistory,$rootScope, $location, $timeout,CommonJs,IndexdbJs) {
+.run(function($ionicPlatform,$cordovaToast,$cordovaKeyboard,$ionicHistory,$rootScope, $location, $timeout,CommonJs) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,11 +21,6 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
       StatusBar.styleLightContent();
     }
   });
-
-    alert('db');
-    IndexdbJs.save("user",{userid:12,name:"shiguoqing"}),function(e){
-      console.log(e);
-    };
 
     //物理返回按钮控制&双击退出应用
     $ionicPlatform.registerBackButtonAction(function (e) {
@@ -41,7 +36,7 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
             $rootScope.backButtonPressedOnceToExit = false;
           }, 2000);
         }
-      }else if($cordovaKeyboard.isVisible()) {
+      }else if(cordova.plugins.Keyboard.isVisible()) {
         alert('键盘关闭');
         $cordovaKeyboard.close();
       }else if($ionicHistory.backView()){

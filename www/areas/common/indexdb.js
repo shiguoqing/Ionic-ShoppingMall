@@ -5,9 +5,6 @@
  ******************************************************/
 angular.module('indexdb', [])
   .factory('IndexdbJs', ['$ionicPopup',function ($ionicPopup) {
-    alert("indexdb");
-
-
 
     window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
     window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
@@ -15,35 +12,42 @@ angular.module('indexdb', [])
     window.IDBCursor=window.IDBCursor||window.webkitIDBCursor|| window.msIDBCursor;
     var db={
       dbName: 'aptdb',
-      dbVersion: 1, //用小数会四舍五入
+      dbVersion: 2015, //用小数会四舍五入
       dbInstance: {},
 
       errorHandler: function (error) {
-        window.alert('error: ' + error.target.code);
+        console.log(error);
+        alert('error: ' + error.target.code);
       },
 
-      open: function (callback) {
+      open: function (func,fail) {
         var dbContent = window.indexedDB.open(db.dbName, db.dbVersion);
         dbContent.onupgradeneeded = db.upgrade;
         dbContent.onerror = db.errorHandler;
         dbContent.onsuccess = function (e) {
           db.dbInstance = dbContent.result;
-          db.dbInstance.onerror = db.errorHandler;
-          callback();
+          db.dbInstance.onerror = fail;
+          func();
         };
       },
       upgrade: function (e) {
-        var
-          _db = e.target.result,
-          names = _db.objectStoreNames,
-          name = "user";
+        //var _db = e.target.result;
+        //  _db.createObjectStore(
+        //    name,
+        //    {
+        //      keyPath: 'goodsId',
+        //      autoIncrement:false
+        //    });
+
+        var _db = e.target.result,names = _db.objectStoreNames;
+        var name = "cart";
         if (!names.contains(name)) {
 
           _db.createObjectStore(
             name,
             {
-              keyPath: 'id',
-              autoIncrement: true
+              keyPath: 'goodsId',
+              autoIncrement:false
             });
         }
       },
@@ -53,87 +57,97 @@ angular.module('indexdb', [])
         store = txn.objectStore(objectStoreName);
         return store;
       },
-      save: function (objectStoreName,data, callback) {
+      add: function (objectStoreName,data,success,fail) {
         db.open(function () {
           var store, req, mode = 'readwrite';
           store = db.getObjectStore(objectStoreName,mode),
-            req = data.id ? store.put(data) : store.add(data);
-            req.onsuccess = callback;
-        });
+            req = store.add(data);
+            req.onsuccess = success;
+            req.onerror=fail;
+        },fail);
       },
-      getAll: function (callback) {
-
+      update: function (objectStoreName,data,success,fail) {
         db.open(function () {
-
-          var
-            store = db.getObjectStore(),
-            cursor = store.openCursor(),
-            data = [];
-
-          cursor.onsuccess = function (e) {
-
-            var result = e.target.result;
-
-            if (result &&
-              result !== null) {
-
-              data.push(result.value);
-              result.continue();
-
-            } else {
-
-              callback(data);
-            }
-          };
-
-        });
-      },
-      get: function (id, callback) {
-
-        id = parseInt(id);
-
-        db.open(function () {
-
-          var
-            store = db.getObjectStore(),
-            request = store.get(id);
-
-          request.onsuccess = function (e){
-            callback(e.target.result);
-          };
-        });
-      },
-      'delete': function (id, callback) {
-
-      id = parseInt(id);
-
-      db.open(function () {
-
-        var
-          mode = 'readwrite',
-          store, request;
-
-        store = db.getObjectStore(mode);
-
-        request = store.delete(id);
-
-        request.onsuccess = callback;
-      });
-    },
-      deleteAll: function (callback) {
-
-        db.open(function () {
-
-          var mode, store, request;
-
-          mode = 'readwrite';
-          store = db.getObjectStore(mode);
-          request = store.clear();
-
-          request.onsuccess = callback;
-        });
-
+          var store, req, mode = 'readwrite';
+          store = db.getObjectStore(objectStoreName,mode),
+            req = store.put(data);
+          req.onsuccess = success;
+          req.onerror=fail;
+        },fail);
       }
+    //  getAll: function (callback) {
+    //
+    //    db.open(function () {
+    //
+    //      var
+    //        store = db.getObjectStore(),
+    //        cursor = store.openCursor(),
+    //        data = [];
+    //
+    //      cursor.onsuccess = function (e) {
+    //
+    //        var result = e.target.result;
+    //
+    //        if (result &&
+    //          result !== null) {
+    //
+    //          data.push(result.value);
+    //          result.continue();
+    //
+    //        } else {
+    //
+    //          callback(data);
+    //        }
+    //      };
+    //
+    //    });
+    //  },
+    //  get: function (id, callback) {
+    //
+    //    id = parseInt(id);
+    //
+    //    db.open(function () {
+    //
+    //      var
+    //        store = db.getObjectStore(),
+    //        request = store.get(id);
+    //
+    //      request.onsuccess = function (e){
+    //        callback(e.target.result);
+    //      };
+    //    });
+    //  },
+    //  'delete': function (id, callback) {
+    //
+    //  id = parseInt(id);
+    //
+    //  db.open(function () {
+    //
+    //    var
+    //      mode = 'readwrite',
+    //      store, request;
+    //
+    //    store = db.getObjectStore(mode);
+    //
+    //    request = store.delete(id);
+    //
+    //    request.onsuccess = callback;
+    //  });
+    //},
+    //  deleteAll: function (callback) {
+    //
+    //    db.open(function () {
+    //
+    //      var mode, store, request;
+    //
+    //      mode = 'readwrite';
+    //      store = db.getObjectStore(mode);
+    //      request = store.clear();
+    //
+    //      request.onsuccess = callback;
+    //    });
+    //
+    //  }
     };
 
     return db;
