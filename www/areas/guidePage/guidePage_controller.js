@@ -22,7 +22,7 @@ angular.module('APT.guidePage.controller', [])
     });
 
     // 给开始体验按钮加点击事件
-    document.getElementById("close").addEventListener('tap', function(event) {
+    document.getElementById("close").addEventListener('click', function(event) {
       localStorage["isFirst"]=false;
       $state.go("indexTab.home");
     }, false);

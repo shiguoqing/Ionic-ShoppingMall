@@ -20,12 +20,13 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
-  });
 
     //物理返回按钮控制&双击退出应用
     $ionicPlatform.registerBackButtonAction(function (e) {
       //判断处于哪个页面时双击退出
-      if ($location.path() == '/indexTab/home' || $location.path() == '/indexTab/category' || $location.path() == '/indexTab/cart'|| $location.path() == '/indexTab/account') {
+      if ($location.path() == '/guidePage') {
+        ionic.Platform.exitApp();
+      }else if ($location.path() == '/indexTab/home' || $location.path() == '/indexTab/category' || $location.path() == '/indexTab/cart'|| $location.path() == '/indexTab/account') {
         if ($rootScope.backButtonPressedOnceToExit) {
           ionic.Platform.exitApp();
         } else {
@@ -36,10 +37,11 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
             $rootScope.backButtonPressedOnceToExit = false;
           }, 2000);
         }
-      }else if(cordova.plugins.Keyboard.isVisible()) {
+      }else if($cordovaKeyboard.isVisible()) {
         alert('键盘关闭');
         $cordovaKeyboard.close();
       }else if($ionicHistory.backView()){
+        alert($cordovaKeyboard.isVisible());
         alert('返回视图');
         $ionicHistory.goBack();
       } else {
@@ -58,6 +60,9 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
       return false;
     }, 105);
 
+
+
+  });
 
 });
 

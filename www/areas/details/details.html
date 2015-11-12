@@ -35,22 +35,28 @@
         <span>已选</span>
         66651k女 m 1件
       </div>
-      <div class="yanse">
-        <span>颜色</span>
-        <span class="listBox listCurrent">红色</span>
-        <span class="listBox">白色</span>
+      <div class="yanse clearBoth">
+        <span class="floatLeft">颜色</span>
+        <div class="floatLeft" ng-repeat="item in obj_goodsInfo.colorGroup">
+          <input id="colorRadio{{$index}}" type="radio" name="color" value="{{item.value}}"  ng-checked="$index==0?true:false" ng-init="$index==0?obj_goodsDetailInfo.color=item.value:''" ng-model="obj_goodsDetailInfo.color">
+          <span ng-class="obj_goodsDetailInfo.color==item.value?'listCurrent':''" class="listBox"><label for="colorRadio{{$index}}">{{item.name}}</label></span>
+        </div>
       </div>
-      <div class="chicun">
-        <span>尺寸</span>
-        <span class="listBox">s</span>
-        <span class="listBox listCurrent">m</span>
-        <span class="listBox">l</span>
+      <div class="chicun clearBoth">
+        <span class="floatLeft">尺寸</span>
+        <div class="floatLeft" ng-repeat="item in obj_goodsInfo.sizeGroup">
+          <input id="sizeRadio{{$index}}" type="radio" name="size" value="{{item.value}}"  ng-checked="$index==0?true:false" ng-init="$index==0?obj_goodsDetailInfo.size=item.value:''" ng-model="obj_goodsDetailInfo.size">
+          <span ng-class="obj_goodsDetailInfo.size==item.value?'listCurrent':''" class="listBox"><label for="sizeRadio{{$index}}">{{item.name}}</label></span>
+        </div>
       </div>
-      <div class="shuliang">
-        <span>数量</span>
-        <span class="listLeft">-</span>
-        <span class="listNum">1</span>
-        <span class="listRight">+</span>
+      <div class="shuliang clearBoth">
+        <span class="floatLeft">数量</span>
+        <div class="floatLeft">
+          <span class="listLeft floatLeft" ng-click="jian1()">-</span>
+          <input class="floatLeft" type="text" readonly ng-model="obj_goodsDetailInfo.number">
+          <span class="listRight floatLeft" ng-click="jia1()">+</span>
+        </div>
+
       </div>
     </div>
     <div id="otherInfo">

@@ -1,3 +1,28 @@
+#details input[type=radio]{
+  height: 0;
+  width: 0;
+}
+#details input[type=text]{
+  padding: 0;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+#details .clearBoth{
+  clear: both;
+}
+#details .floatLeft{
+  float: left;
+}
+#details .chicun div span{
+  width: 30px;
+  text-align: center;
+}
+#details .shuliang div{
+  margin-left: 7px;
+}
 #details ion-content{
   overflow: scroll;
   background-color: #efeff4;

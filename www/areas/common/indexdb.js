@@ -74,34 +74,28 @@ angular.module('indexdb', [])
           req.onsuccess = success;
           req.onerror=fail;
         },fail);
+      },
+      getAll: function (objectStoreName,success,fail) {
+
+        db.open(function () {
+          var
+            store = db.getObjectStore(objectStoreName),
+            cursor = store.openCursor(),
+            data = [];
+
+          cursor.onsuccess = function (e) {
+            var result = e.target.result;
+            if (result && result !== null) {
+              data.push(result.value);
+              result.continue();
+            } else {
+              success(data);
+            }
+          };
+          cursor.onerror=fail;
+
+        });
       }
-    //  getAll: function (callback) {
-    //
-    //    db.open(function () {
-    //
-    //      var
-    //        store = db.getObjectStore(),
-    //        cursor = store.openCursor(),
-    //        data = [];
-    //
-    //      cursor.onsuccess = function (e) {
-    //
-    //        var result = e.target.result;
-    //
-    //        if (result &&
-    //          result !== null) {
-    //
-    //          data.push(result.value);
-    //          result.continue();
-    //
-    //        } else {
-    //
-    //          callback(data);
-    //        }
-    //      };
-    //
-    //    });
-    //  },
     //  get: function (id, callback) {
     //
     //    id = parseInt(id);
