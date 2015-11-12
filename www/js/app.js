@@ -37,14 +37,24 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
             $rootScope.backButtonPressedOnceToExit = false;
           }, 2000);
         }
-      }else if($cordovaKeyboard.isVisible()) {
-        alert('键盘关闭');
-        $cordovaKeyboard.close();
-      }else if($ionicHistory.backView()){
+      }else if ($ionicHistory.backView()) {
         alert($cordovaKeyboard.isVisible());
-        alert('返回视图');
-        $ionicHistory.goBack();
-      } else {
+        if ($cordovaKeyboard.isVisible()) {
+          $cordovaKeyboard.close();
+        } else {
+          $ionicHistory.goBack();
+        }
+      }
+
+      //else if($cordovaKeyboard.isVisible()) {
+      //  alert('键盘关闭');
+      //  $cordovaKeyboard.close();
+      //}else if($ionicHistory.backView()){
+      //  alert($cordovaKeyboard.isVisible());
+      //  alert('返回视图');
+      //  $ionicHistory.goBack();
+      //}
+      else {
         if ($rootScope.backButtonPressedOnceToExit) {
           ionic.Platform.exitApp();
         }else{

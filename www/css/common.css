@@ -1,4 +1,5 @@
 ion-view{
-  background-image:url('../img/common/bg960@2x.png');
+  /*background-image:url('../img/common/bg960@2x.png');*/
+  background-color: #F7F7F7;
   background-size: 100% 100%;
 }

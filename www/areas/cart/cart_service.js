@@ -1,15 +1,40 @@
 angular.module('APT.cart.service', [])
-  .factory('CartFty', ['$http', '$q','Global','$window', function ($http, $q,Global,$window) {
+  .factory('CartFty', ['$http', '$q','$window','IndexdbJs', function ($http, $q,$window,IndexdbJs) {
     return {
-      // 获取待办任务列表数据
-      mobileUserUndoTaskList: function (message) {
+      getAllData: function () {
         var deferred = $q.defer();
-        var url = Global.SERVER_PATH+"/WXPlatformServlet?method=mobileUserUndoTaskList&message="+message+"&loginName="+$window.localStorage['loginName']+"&platform="+Global.PLATFORM+"&module=bill&callback=JSON_CALLBACK";
-        $http.jsonp(url).success(function (data, status, headers, config) {
+        IndexdbJs.getAll("cart",function(data){
           deferred.resolve(data);
-        }).error(function (data,status, headers, config) {
-          deferred.reject(data);
-        });
+        },function(e){
+          deferred.reject(e);
+        })
+        return deferred.promise;
+      },
+      get: function (id) {
+        var deferred = $q.defer();
+        IndexdbJs.get(id,"cart",function(data){
+          deferred.resolve(data);
+        },function(e){
+          deferred.reject(e);
+        })
+        return deferred.promise;
+      },
+      updateData: function (data) {
+        var deferred = $q.defer();
+        IndexdbJs.update("cart",data,function(){
+          deferred.resolve();
+        },function(e){
+          deferred.reject(e);
+        })
+        return deferred.promise;
+      },
+      delete: function (id) {
+        var deferred = $q.defer();
+        IndexdbJs.delete(id,"cart",function(data){
+          deferred.resolve(data);
+        },function(e){
+          deferred.reject(e);
+        })
         return deferred.promise;
       }
     }

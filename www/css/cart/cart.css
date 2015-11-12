@@ -1,3 +1,42 @@
+#cart #delete i{
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  z-index: 100;
+}
+
+#cart #delete {
+  float: right;
+}
+
+#cart .anniu{
+  width: 20px;
+  height: 25px;
+  background-color: #dcdcdc;
+  border: 1px solid grey;
+  text-align: center;
+  padding-left: 5px;
+}
+#cart ion-content{
+  padding-bottom: 58px;
+}
+
+#cart input[type=text]{
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 60px;
+  height: 25px;
+  text-align: center;
+}
+
+#cart .clearBoth{
+  clear: both;
+}
+#cart .floatLeft{
+  float: left;
+}
+
 #cart ion-content{
   overflow: scroll;
 }
@@ -175,7 +214,6 @@
   bottom:10px;
 }
 #cart .pro-body-des-text span{
-  height:30px;
   overflow: hidden;
   display:-webkit-box;
   text-overflow: ellipsis;

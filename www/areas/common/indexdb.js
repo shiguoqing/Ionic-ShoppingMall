@@ -31,18 +31,10 @@ angular.module('indexdb', [])
         };
       },
       upgrade: function (e) {
-        //var _db = e.target.result;
-        //  _db.createObjectStore(
-        //    name,
-        //    {
-        //      keyPath: 'goodsId',
-        //      autoIncrement:false
-        //    });
-
         var _db = e.target.result,names = _db.objectStoreNames;
+        // 此处可以创建多个表
         var name = "cart";
         if (!names.contains(name)) {
-
           _db.createObjectStore(
             name,
             {
@@ -94,54 +86,41 @@ angular.module('indexdb', [])
           };
           cursor.onerror=fail;
 
+        },fail);
+      },
+      get: function (id,objectStoreName,success,fail) {
+        db.open(function () {
+          var
+            store = db.getObjectStore(objectStoreName),
+            req = store.get(id);
+          req.onsuccess = function (e){
+            success(e.target.result);
+          };
+          req.onerror=fail;
+        });
+      },
+      // delete是保留字
+      delete: function (id,objectStoreName,success,fail) {
+        db.open(function () {
+          var
+            mode = 'readwrite',
+            store, req;
+          store = db.getObjectStore(objectStoreName,mode);
+          req = store.delete(id);
+          req.onsuccess = success;
+          req.onerror=fail;
+        });
+      },
+      deleteAll: function (objectStoreName,success,fail) {
+        db.open(function () {
+          var mode, store, req;
+          mode = 'readwrite';
+          store = db.getObjectStore(objectStoreName,mode);
+          req = store.clear();
+          req.onsuccess = success;
+          req.onerror=fail;
         });
       }
-    //  get: function (id, callback) {
-    //
-    //    id = parseInt(id);
-    //
-    //    db.open(function () {
-    //
-    //      var
-    //        store = db.getObjectStore(),
-    //        request = store.get(id);
-    //
-    //      request.onsuccess = function (e){
-    //        callback(e.target.result);
-    //      };
-    //    });
-    //  },
-    //  'delete': function (id, callback) {
-    //
-    //  id = parseInt(id);
-    //
-    //  db.open(function () {
-    //
-    //    var
-    //      mode = 'readwrite',
-    //      store, request;
-    //
-    //    store = db.getObjectStore(mode);
-    //
-    //    request = store.delete(id);
-    //
-    //    request.onsuccess = callback;
-    //  });
-    //},
-    //  deleteAll: function (callback) {
-    //
-    //    db.open(function () {
-    //
-    //      var mode, store, request;
-    //
-    //      mode = 'readwrite';
-    //      store = db.getObjectStore(mode);
-    //      request = store.clear();
-    //
-    //      request.onsuccess = callback;
-    //    });
-    //
-    //  }
     };
 
     return db;

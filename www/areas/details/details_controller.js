@@ -45,9 +45,9 @@ angular.module('APT.details.controller', [])
      */
     $scope.func_addToCart=function(){
 
+      //Todo:这的逻辑是选中的加入购入车,不是直接修改
       // 设置编号
       $scope.obj_goodsDetailInfo.goodsId= $scope.obj_goodsInfo.goodsId+ $scope.obj_goodsDetailInfo.color+ $scope.obj_goodsDetailInfo.size;
-
       // 将用户选择信息存入indexdb中
       IndexdbJs.update("cart",$scope.obj_goodsDetailInfo,function(e){
         // 数据保存成功，购物车数量增加
@@ -62,16 +62,6 @@ angular.module('APT.details.controller', [])
           localStorage["cartCount"]=$scope.obj_cartCount.count;
           $scope.$digest();
         }
-      },function(e){
-        console.log(e);
-      })
-
-
-
-
-
-      IndexdbJs.getAll("cart",function(data){
-        console.log(data);
       },function(e){
         console.log(e);
       })
