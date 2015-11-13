@@ -99,6 +99,13 @@ angular.module('APT.cart.controller', ['APT.cart.service'])
         });
     }
 
+
+    // 选择被选中的按钮的jquery语句
+    //$("input[type='checkbox']:checked").each(function(){
+    //  console.log($(this).val());
+    //  $scope.batchApproveInfo.taskIDS=$scope.batchApproveInfo.taskIDS+$(this).val()+","
+    //});
+
     // 返回按钮方法
     $scope.goBack = function () {
       $ionicHistory.goBack();

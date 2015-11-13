@@ -10,7 +10,7 @@
 
 ##ng-cordova插件：
 1. cordova plugin add https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git
-2. 
+2. cordova plugin add cordova-plugin-camera
 3. 
 
 
@@ -21,6 +21,7 @@
 ##数据模型
 1. 购物车数量模型  localStorage["cartCount"]       
 2. 判断是够第一次启动应用 localStorage["isFirst"]  /js/route.js
+3. 头像  localStorage["touxiang"]
 
 
 

@@ -45,15 +45,6 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
           $ionicHistory.goBack();
         }
       }
-
-      //else if($cordovaKeyboard.isVisible()) {
-      //  alert('键盘关闭');
-      //  $cordovaKeyboard.close();
-      //}else if($ionicHistory.backView()){
-      //  alert($cordovaKeyboard.isVisible());
-      //  alert('返回视图');
-      //  $ionicHistory.goBack();
-      //}
       else {
         if ($rootScope.backButtonPressedOnceToExit) {
           ionic.Platform.exitApp();
