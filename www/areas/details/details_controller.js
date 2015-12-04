@@ -84,4 +84,8 @@ angular.module('APT.details.controller', [])
       $ionicHistory.goBack();
     };
 
+      $scope.func_goHome= function () {
+        $state.go('indexTab.home');
+      }
+
   }]);

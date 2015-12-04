@@ -30,7 +30,6 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
         if ($rootScope.backButtonPressedOnceToExit) {
           ionic.Platform.exitApp();
         } else {
-          alert('上面的退出');
           $rootScope.backButtonPressedOnceToExit = true;
           $cordovaToast.showShortBottom('再按一次退出系统');
           setTimeout(function () {
@@ -49,7 +48,6 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
         if ($rootScope.backButtonPressedOnceToExit) {
           ionic.Platform.exitApp();
         }else{
-          alert('地下的退出');
           $rootScope.backButtonPressedOnceToExit = true;
           $cordovaToast.showShortBottom('再按一次退出系统');
           setTimeout(function () {
@@ -59,7 +57,7 @@ angular.module('starter', ['ionic', 'route', 'config', 'global', 'commonJs', 'ng
       }
       e.preventDefault();
       return false;
-    }, 105);
+    }, 110);
 
 
 

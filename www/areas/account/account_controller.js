@@ -4,16 +4,16 @@
  功  能：我的
  ******************************************************/
 angular.module('APT.account.controller', [])
-  .controller('AccountCtrl', ['$scope', '$state','$ionicActionSheet','$cordovaCamera','CommonJs', function ($scope, $state,$ionicActionSheet,$cordovaCamera,CommonJs) {
+  .controller('AccountCtrl', ['$scope', '$state','$ionicActionSheet','$cordovaCamera','CommonJs','$ionicPlatform','$ionicPopup',
+    function ($scope, $state,$ionicActionSheet,$cordovaCamera,CommonJs,$ionicPlatform,$ionicPopup) {
 
     $scope.$on('$ionicView.enter', function (e) {
     });
+
     if(localStorage["touxiang"]){
       var image = document.getElementById('touxiang');
       image.src = "data:image/jpeg;base64," + localStorage["touxiang"];
     }
-
-
 
     // 选择上传方式
     $scope.func_showAction=function(){
@@ -134,5 +134,19 @@ angular.module('APT.account.controller', [])
     //    alert('您的手机不支持摇一摇功能');
     //  }
     //}
+
+      $scope.func_exitApp=function(){
+        var confirmPopup = $ionicPopup.confirm({
+          title: '提示',
+          template: '确认退出?'
+        });
+        confirmPopup.then(function(res) {
+          if(res) {
+            ionic.Platform.exitApp();
+          } else {
+
+          }
+        });
+      }
 
   }]);

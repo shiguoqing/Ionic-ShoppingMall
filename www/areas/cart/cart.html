@@ -51,9 +51,9 @@
             </div>
           </div>
         </div>
-        <div id="delete">
-         <i class="ion-trash-a" ng-click="func_delete(item.goodsId)"></i>
-        </div>
+        <!--<div id="delete">-->
+         <!--<i class="ion-trash-a" ng-click="func_delete(item.goodsId)"></i>-->
+        <!--</div>-->
       </div>
     </div>
   </ion-content>
@@ -67,7 +67,7 @@
         <span>总额:￥{{obj_cartDbData.total}} 返现:￥0.00</span>
       </div>
     </div>
-    <div class="footRight">
+    <div class="footRight" ng-click="func_goHome()">
       去结算（0）
     </div>
   </footer>

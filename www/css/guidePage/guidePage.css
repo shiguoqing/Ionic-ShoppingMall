@@ -1,8 +1,4 @@
 
-#guidePage .hidden{
-  display: none!important;
-}
-
 #guidePage h2,#guidePage li{
   color: #fff;
 }
@@ -41,6 +37,7 @@
   left: 50%;
   margin-left: -100px;
 }
+
 #guidePage .animate {
   position: absolute;
   left: 0;
@@ -69,6 +66,9 @@
   -webkit-animation-duration: 1s;
   -webkit-animation-play-state: paused;
   -webkit-animation-fill-mode: both;
+}
+#guidePage .hidden{
+  display: none!important;
 }
 #guidePage .guide-show .bounceInDown {
   -webkit-animation-name: bounceInDown;

@@ -110,4 +110,8 @@ angular.module('APT.cart.controller', ['APT.cart.service'])
     $scope.goBack = function () {
       $ionicHistory.goBack();
     };
+
+    $scope.func_goHome= function () {
+      $state.go('indexTab.home');
+    }
   }]);

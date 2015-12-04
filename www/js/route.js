@@ -8,15 +8,12 @@ angular.module('route', [
   'APT.search.route'
 ])
   .config(function ($stateProvider, $urlRouterProvider) {
-    // if none of the above states are matched, use this as the fallback
 
     // 如果不是第一次登陆，直接跳转
     if(localStorage["isFirst"]){
-      //$state.go("indexTab.home");
       $urlRouterProvider.otherwise('/indexTab/home');
     }
     else{
-      //$state.go("guidePage");
       $urlRouterProvider.otherwise('/guidePage');
     }
 
