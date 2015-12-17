@@ -11,6 +11,7 @@ angular.module('APT.home.controller', [])
     countdown();
     initHeaderSlide();
     initToutiaoSlide();
+    goTop();
 
 
     // 头部滚动条数据
@@ -126,6 +127,26 @@ angular.module('APT.home.controller', [])
         }
       },1000)
     }
+
+    //回到顶部
+    function goTop(){
+      var bg=$window.document.getElementById('home-content');
+      var goTop = document.querySelector(".back_top");
+
+      bg.addEventListener('scroll',function(){
+        var top = bg.scrollTop;
+        if(top>200){
+          goTop.style.opacity = 1;
+        }else{
+          goTop.style.opacity = 0;
+        }
+      },false);
+
+      goTop.onclick = function(){
+        bg.scrollTop = 0;
+      }
+    };
+
 
 
     $scope.$on('$stateChangeSuccess', function(e) {
