@@ -9,9 +9,13 @@ angular.module('APT.home.controller', [])
     getHeaderSlideData();
     headerChangeColor();
     countdown();
-    initHeaderSlide();
-    initToutiaoSlide();
     goTop();
+
+    // 监听视图完全加载之后的事件
+    $scope.$on('$ionicView.afterEnter', function (e) {
+      initHeaderSlide();
+      initToutiaoSlide();
+    });
 
 
     // 头部滚动条数据

@@ -11,6 +11,10 @@ angular.module('APT.category.controller', [])
       $scope.getCategoryDetailData(102);
     });
 
+    //$scope.$on('$ionicView.afterEnter', function (e) {
+    //  $("img .lazy").lazyload();
+    //});
+
 
     function getCategoryData(){
       $scope.categoryData=[
