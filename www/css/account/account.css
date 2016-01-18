@@ -28,6 +28,17 @@
 #account .telephone{
   position:absolute;
   right: 20px;
+  height: 20px;
+  width: 50px;
+}
+
+#account .telephone{
+  float: right;
+  right: 40px;
+}
+#account .version{
+  float: right;
+  right: 5px;
 }
 
 

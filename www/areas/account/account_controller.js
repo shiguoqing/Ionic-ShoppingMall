@@ -37,7 +37,7 @@ angular.module('APT.account.controller', [])
         cancelText: "取消",
         cancel: function() {
           //hideSheet();
-          hideSheet.hide();
+          //hideSheet.hide();
         }
         //destructiveText: "删除",
         //destructiveButtonClicked:function(){
@@ -99,6 +99,11 @@ angular.module('APT.account.controller', [])
         //CommonJs.AlertPopup(err.message);
       });
     };
+
+      // 打电话
+      $scope.callPhone=function(number){
+        $window.location.href="tel:"+number;
+      }
 
 
     //H5改变背景颜色
