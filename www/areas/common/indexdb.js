@@ -16,8 +16,7 @@ angular.module('indexdb', [])
       dbInstance: {},
 
       errorHandler: function (error) {
-        console.log(error);
-        alert('error: ' + error.target.code);
+        console.log('error: ' + error.target.error.message);
       },
 
       open: function (func,fail) {
